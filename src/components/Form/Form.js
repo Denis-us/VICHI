@@ -11,7 +11,7 @@ const Form = () => {
                 </div>
                 <div className={s.inputBox}>
                     <input type="email" name="email" required="" className={s.input}/>
-                    <label className={s.label}>E_MAIL</label>
+                    <label className={s.label}>E-MAIL</label>
                 </div>
                 <div className={s.inputBox}>
                     <input type="text" name="description" required="" className={s.input}/>

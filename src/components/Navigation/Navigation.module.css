@@ -11,16 +11,6 @@
     justify-content: flex-end;
 }
 
-
 .navigationEl:not(:last-child) {
     margin-right: 50px;
-}
-
-.navigationEl:hover,
-.navigationEl:focus {
-    color: greenyellow;
-}
-
-.navEl {
-    cursor: pointer;
 }

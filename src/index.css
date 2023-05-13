@@ -30,3 +30,18 @@ button {
   color: inherit;
   padding: 0;
 }
+
+.link {
+  color: black;
+  cursor: pointer;
+}
+
+.link:hover,
+.link:focus {
+  color: greenyellow;
+}
+
+.link-active {
+  color: greenyellow;
+  font-weight: 800;
+}
