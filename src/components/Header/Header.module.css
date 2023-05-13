@@ -1,0 +1,129 @@
+.header {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 200px;
+    height: 100vh;
+    margin-left: 100px;
+    background-color: black;
+    color: white;
+}
+
+.logo {
+    text-align: center;
+}
+
+.pages {
+    margin-bottom: 60px;
+}
+
+.pagesList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pageListEl {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 90px;
+}
+
+.pageEl {
+    position: relative;
+    display: block;
+    font-weight: 400;
+    font-size: medium;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.pageEl:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-out;
+}
+
+.pageEl:hover::after {
+    width: 100%;
+}
+
+.dot {
+    position: relative;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 20px;
+}
+
+.letter {
+    margin-left: 20px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: xx-large;
+    color: white;
+}
+
+.lang {
+    margin-bottom: 100px;
+}
+
+.langList {
+    display: flex;
+    justify-content: center;
+}
+
+.langListEl:not(:last-child) {
+    margin-right: 10px;
+}
+
+.langEl {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+
+.langEl:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-out;
+}
+
+.langEl:hover::after {
+    width: 100%;
+}
+
+.iconArrow {
+    fill: greenyellow;
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.showreel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(270deg);
+}
+
+.showreelLink {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
