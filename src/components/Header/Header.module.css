@@ -88,6 +88,8 @@
 }
 
 .langEl {
+    font-family: 'Gothic Pro Light';
+    letter-spacing: -1px;
     position: relative;
     cursor: pointer;
     padding-bottom: 3px;
