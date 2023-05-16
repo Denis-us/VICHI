@@ -49,16 +49,16 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <div className={s.showreel}>
-                    <button className={s.showreelLink}>
+                {/* <div className={s.showreel}> */}
+                    {/* <button className={s.showreelLink}>
                         SHOWREEL
-                    </button>
+                    </button> */}
                     <IconArrow className={s.iconArrow}/>
-                </div>
+                {/* </div> */}
             </div>
         </div>
 
-        <VerticalLine/>
+        {/* <VerticalLine/> */}
       </div>
     );
   };

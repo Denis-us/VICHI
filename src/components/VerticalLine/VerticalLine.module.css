@@ -7,7 +7,7 @@
 .verticalLine {
     display: inline-block;
     width: 1px;
-    background-color: #ececec;
+    background-color: var(--text-color-white);
     margin-right: 200px; 
     height: 100vh;
     z-index: -1;

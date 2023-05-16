@@ -6,7 +6,7 @@
 
 .list {
     display: flex;
-    color: #ececec;
+    color: var(--text-color-white);
     transform: rotate(90deg);
 }
 

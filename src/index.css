@@ -8,6 +8,11 @@ body {
   background-size: 100%;
 }
 
+:root {
+  --text-color-white: #ececec;
+  --accent-color: #d9fe57;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -33,17 +38,17 @@ button {
 }
 
 .link {
-  color: #ececec;
+  color: var(--text-color-white);
   cursor: pointer;
 }
 
 .link:hover,
 .link:focus {
-  color: greenyellow;
+  color: var(--accent-color);
 }
 
 .link-active {
-  color: greenyellow;
+  color: var(--accent-color);
   font-family: 'Gotham Pro Black';
   font-weight: 800;
 }

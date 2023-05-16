@@ -26,7 +26,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 20px;
-    color: #ececec;
+    color: var(--text-color-white);
     pointer-events: none;
     transition: 250ms;
 }
@@ -35,10 +35,10 @@
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #ececec;
+    color: var(--text-color-white);
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid var(--text-color-white);
     outline: none;
     background: transparent;
     
@@ -54,6 +54,6 @@
 .input:focus ~ .label{
     top: -20px;
     left: 0;
-    color: #ececec;
+    color: var(--text-color-white);
     font-size: 12px;
 }
