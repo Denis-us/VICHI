@@ -1,7 +1,7 @@
 .navigation {
     display: flex;
     justify-content: flex-end;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-right: 200px;
 }
 
@@ -12,5 +12,5 @@
 }
 
 .navigationEl:not(:last-child) {
-    margin-right: 50px;
+    margin-right: 100px;
 }

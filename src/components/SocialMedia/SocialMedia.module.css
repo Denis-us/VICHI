@@ -1,0 +1,24 @@
+.socials {
+    position: fixed;
+    right: -20px;
+    bottom: 200px;
+}
+
+.list {
+    display: flex;
+    color: #ececec;
+    transform: rotate(90deg);
+}
+
+.listEl {
+    letter-spacing: -1px;
+    font-size: small;
+}
+
+.listEl:not(:last-child) {
+    margin-right: 20px;
+}
+
+.socialLink {
+    cursor: pointer;
+}

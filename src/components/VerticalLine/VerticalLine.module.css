@@ -1,0 +1,18 @@
+.verticalLineBlock  {
+    position: fixed;
+    display: flex;
+    pointer-events: none;
+}
+
+.verticalLine {
+    display: inline-block;
+    width: 1px;
+    background-color: #ececec;
+    margin-right: 200px; 
+    height: 100vh;
+    z-index: -1;
+}
+
+.verticalLine:nth-child(-n+3) {
+    width: 0;
+}

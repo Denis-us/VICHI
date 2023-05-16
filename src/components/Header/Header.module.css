@@ -1,3 +1,8 @@
+.headerLines {
+    width: 100%;
+    position: absolute;
+}
+
 .header {
     position: fixed;
     display: flex;
@@ -5,9 +10,9 @@
     justify-content: space-around;
     width: 200px;
     height: 100vh;
-    margin-left: 100px;
-    background-color: black;
-    color: white;
+    margin-left: 200px;
+    background-color: #0d0d0d;
+    color: #ececec;
 }
 
 .logo {
@@ -45,7 +50,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background-color: white;
+    background-color: #ececec;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -62,7 +67,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: white;
+    background-color: #ececec;
     margin-left: 20px;
 }
 
@@ -71,7 +76,7 @@
     padding-bottom: 5px;
     font-weight: 600;
     font-size: xx-large;
-    color: white;
+    color: #ececec;
 }
 
 .lang {
@@ -88,7 +93,6 @@
 }
 
 .langEl {
-    font-family: 'Gothic Pro Light';
     letter-spacing: -1px;
     position: relative;
     cursor: pointer;
@@ -100,7 +104,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background-color: white;
+    background-color: #ececec;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -112,7 +116,7 @@
 }
 
 .iconArrow {
-    fill: greenyellow;
+    fill: #d9fe57;
     transform: rotate(270deg);
     cursor: pointer;
 }

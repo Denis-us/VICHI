@@ -1,9 +1,9 @@
 @font-face {
-    font-family: "Gothic Pro Black";
-    src: url("../fonts/GothicPro.ttf");
+    font-family: "Gotham Pro Black";
+    src: url("../fonts/GothamPro-Black.ttf");
 }
 
 @font-face {
-    font-family: "Gothic Pro Light";
+    font-family: "Gotham Pro Light";
     src: url("../fonts/GothamPro-Light.ttf");
 }

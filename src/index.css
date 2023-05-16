@@ -1,8 +1,11 @@
 body {
   margin: 0;
-  font-family: 'Gothic Pro Black', 'Gothic Pro Light';
+  font-family: 'Gotham Pro Light', 'Gotham Pro Black';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url('../src/pictures/background-img/space.jpg');
+  background-size: 100%;
 }
 
 code {
@@ -30,7 +33,7 @@ button {
 }
 
 .link {
-  color: black;
+  color: #ececec;
   cursor: pointer;
 }
 
@@ -41,5 +44,6 @@ button {
 
 .link-active {
   color: greenyellow;
+  font-family: 'Gotham Pro Black';
   font-weight: 800;
 }
