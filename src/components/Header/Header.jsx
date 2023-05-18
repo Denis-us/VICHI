@@ -1,8 +1,8 @@
 import s from './Header.module.css';
-// import logo from '../../pictures/svg/logo.svg';
+import logo from '../../pictures/svg/logo.svg';
 import { ReactComponent as IconArrow } from '../../pictures/svg/arrow-play-nav.svg';
 import Navigation from '../Navigation';
-import VerticalLine from '../VerticalLine';
+// import VerticalLine from '../VerticalLine';
 
 
 const Header = () => {
@@ -13,8 +13,8 @@ const Header = () => {
 
         <div className={s.header}>
             <div className={s.logo}>
-                {/* <img src={logo} alt="logo" width="150px"/> */}
-                <p>VICHI</p>
+                <img src={logo} alt="logo" className={s.logoImg}/>
+                <p className={s.logoName}>VICHI</p>
             </div>
             <div className={s.navigation}>
                 <Navigation/>

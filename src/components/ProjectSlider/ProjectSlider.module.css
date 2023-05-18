@@ -1,0 +1,85 @@
+.sliderBlock {
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 40%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 100px;
+}
+
+.arrowSlider {
+    width: 150px;
+    cursor: pointer;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.slideImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.customDots {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.customDots li {
+    height: 20px;
+    width: 10px;
+    background-color: #000;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* .customDots .slick-active {
+    height: 60px;
+} */
+
+.customDots li:not(:last-child) {
+    margin-right: 15px;
+}
+  
+/* .customDots li button {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+  
+.customDots li.slick-active button {
+    background-color: #000;
+} */
+
+.customDot {
+    /* height: 100%;
+    width: 100%; */
+    height: 100%;
+    width: 100%;
+}
+
+.customDots li.slick-active {
+    height: 60px;
+}
+
+/* .customDot:not(:last-child) {
+    margin-right: 10px;
+} */

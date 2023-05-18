@@ -1,11 +1,13 @@
 import Header from '../../components/Header';
-import Navigation from '../../components/Navigation';
+import ProjectSlider from '../../components/ProjectSlider';
+import s from './WorksPage.module.css'
 
 export default function WorksPage() {
 
     return(
-        <div className="app">
+        <div className={s.works}>
             <Header/>
+            <ProjectSlider />
         </div>
     )
 }
