@@ -1,16 +1,16 @@
 body {
   margin: 0;
-  font-family: 'Gotham Pro Light', 'Gotham Pro Black';
+  font-family: 'Xolonium-Bold', 'Xolonium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url('../src/pictures/background-img/space.jpg');
-  background-size: 100%;
+  /* background-image: url('../src/pictures/background-img/space.jpg');
+  background-size: 100%; */
 }
 
 :root {
   --text-color-white: #ececec;
-  --accent-color: #d9fe57;
+  --accent-color: #fffc00;
 }
 
 code {
@@ -31,6 +31,7 @@ li {
 }
 
 button {
+  font-family: 'Xolonium-Bold';
   border: none;
   background-color: inherit;
   color: inherit;
@@ -49,6 +50,6 @@ button {
 
 .link-active {
   color: var(--accent-color);
-  font-family: 'Gotham Pro Black';
+  font-family: 'Xolonium';
   font-weight: 800;
 }

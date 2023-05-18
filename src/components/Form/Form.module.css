@@ -5,14 +5,13 @@
     box-sizing: border-box;
     width: 600px;
     border-radius: 10px;
-    margin: auto;
-    /* margin-left: auto;
-    margin-right: 300px; */
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 54px;
     padding-left: 54px;
     padding-right: 54px;
     box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(29, 29, 29);
 }
 
 .inputBox {
@@ -24,7 +23,7 @@
     position: absolute;
     top:0;
     left: 0;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     font-size: 20px;
     color: var(--text-color-white);
     pointer-events: none;
@@ -38,7 +37,7 @@
     color: var(--text-color-white);
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid var(--text-color-white);
+    border-bottom: 2px solid var(--accent-color);
     outline: none;
     background: transparent;
     

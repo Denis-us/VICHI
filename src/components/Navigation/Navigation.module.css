@@ -1,16 +1,11 @@
 .navigation {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 200px;
-    margin-right: 200px;
+    margin-bottom: 100px;
 }
 
 .navigationList {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    text-align: center;
 }
 
 .navigationEl:not(:last-child) {
-    margin-right: 100px;
+    margin-bottom: 10px;
 }

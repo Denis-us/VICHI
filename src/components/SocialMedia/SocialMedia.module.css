@@ -1,13 +1,14 @@
 .socials {
     position: fixed;
-    right: -20px;
-    bottom: 200px;
+    /* left: 100px; */
+    top: 50%;
+    bottom: 50%;
 }
 
 .list {
     display: flex;
     color: var(--text-color-white);
-    transform: rotate(90deg);
+    transform: rotate(270deg);
 }
 
 .listEl {
@@ -21,4 +22,9 @@
 
 .socialLink {
     cursor: pointer;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+    color: var(--accent-color);
 }

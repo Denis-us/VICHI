@@ -2,10 +2,10 @@ import './App.css';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage'
-import About from './pages/About'
-import Services from './pages/Services'
-import Contacts from './pages/Contacts'
-import Order from './pages/Order'
+import AboutPage from './pages/AboutPage'
+import WorksPage from './pages/WorksPage'
+import ContactsPage from './pages/ContactsPage'
+import OrderPage from './pages/OrderPage'
 
 
 // const HomePage = lazy(() => import('./pages/HomePage'))
@@ -20,10 +20,10 @@ export default function App() {
     <Routes>
 
       <Route path="/" element={<HomePage/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/services" element={<Services/>}/>
-      <Route path="/contacts" element={<Contacts/>}/>
-      <Route path="/order" element={<Order/>}/>
+      <Route path="/about" element={<AboutPage/>}/>
+      <Route path="/works" element={<WorksPage/>}/>
+      <Route path="/contacts" element={<ContactsPage/>}/>
+      <Route path="/order" element={<OrderPage/>}/>
 
     </Routes>
   );

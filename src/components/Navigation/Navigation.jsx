@@ -12,7 +12,7 @@ const Navigation = () => {
                     <NavLink to="/about" className={setActive}>ABOUT</NavLink>
                 </li>
                 <li className={s.navigationEl}>
-                    <NavLink to="/services" className={setActive}>SERVICES</NavLink>
+                    <NavLink to="/works" className={setActive}>WORKS</NavLink>
                 </li>
                 <li className={s.navigationEl}>
                     <NavLink to="/contacts" className={setActive}>CONTACTS</NavLink>

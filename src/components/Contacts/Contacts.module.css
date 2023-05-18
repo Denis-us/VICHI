@@ -1,0 +1,39 @@
+.blockContacts {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contactsList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactsEl:not(:last-child) {
+    margin-right: 150px;
+}
+
+.contactBtn {
+    height: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    background-color: black;
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+.icoTel {
+    color: var(--text-color-white);
+}
+
+.contactsEl:hover .contactBtn {
+    color: var(--accent-color);
+}
+
+.contactsEl:hover .icoTel,
+.contactsEl:focus .icoTel {
+    color: var(--accent-color);
+}

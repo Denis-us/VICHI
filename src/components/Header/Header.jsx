@@ -1,21 +1,24 @@
 import s from './Header.module.css';
-import logo from '../../pictures/png/logo.png';
-import { ReactComponent as IconArrow } from '../../pictures/svg/arrow.svg';
+// import logo from '../../pictures/svg/logo.svg';
+import { ReactComponent as IconArrow } from '../../pictures/svg/arrow-play-nav.svg';
+import Navigation from '../Navigation';
 import VerticalLine from '../VerticalLine';
+
 
 const Header = () => {
 
     return (
-      <div className={s.headerLines}>
+    //   <div className={s.headerLines}>
 
 
         <div className={s.header}>
             <div className={s.logo}>
-                <img src={logo} alt="logo" width="150px"/>
+                {/* <img src={logo} alt="logo" width="150px"/> */}
                 <p>VICHI</p>
             </div>
             <div className={s.navigation}>
-                <div className={s.pages}>
+                <Navigation/>
+                {/* <div className={s.pages}>
                     <ul className={s.pagesList}>
                         <li className={s.pageListEl}>
                             <button className={s.pageEl}>01</button>
@@ -38,7 +41,7 @@ const Header = () => {
                             <span className={s.letter}>D</span>
                         </li>
                     </ul>
-                </div>
+                </div> */}
                 <div className={s.lang}>
                     <ul className={s.langList}>
                         <li className={s.langListEl}>
@@ -49,17 +52,14 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <div className={s.showreel}> */}
-                    {/* <button className={s.showreelLink}>
-                        SHOWREEL
-                    </button> */}
+                <div className={s.btnPlay}>
                     <IconArrow className={s.iconArrow}/>
-                {/* </div> */}
+                </div>
             </div>
         </div>
 
-        {/* <VerticalLine/> */}
-      </div>
+        /* <VerticalLine/> */
+    //   </div>
     );
   };
   
