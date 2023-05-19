@@ -1,6 +1,9 @@
-/* .works {
+.works {
     height: 100vh;
-    background-image: url('../../pictures/background-img/jellyfish-red.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../pictures/jpg/team.jpg');
     background-size: 100%;
     background-position: center;
-} */
+}

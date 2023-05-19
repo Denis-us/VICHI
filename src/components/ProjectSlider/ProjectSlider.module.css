@@ -4,28 +4,44 @@
 
 .slider {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    width: 40%;
+    width: 1000px;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 100px;
+    padding-top: 200px;
+}
+
+.btnArrow {
+    position: relative;
+    width: 100px;
 }
 
 .arrowSlider {
-    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
     cursor: pointer;
+    transition: width 0.3s ease;
+    color: var(--accent-color);
+}
+
+.arrowSlider:hover,
+.arrowSlider:focus {
+    width: 130px;
 }
 
 .rotated {
-    transform: rotate(180deg);
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .slideImg {
     margin-left: auto;
     margin-right: auto;
     width: 600px;
+    max-height: 100%;
 }
 
 .customDots {
@@ -40,46 +56,55 @@
 }
 
 .customDots li {
-    height: 20px;
+    height: 40px;
     width: 10px;
-    background-color: #000;
+    background-color: var(--text-color-white);
     cursor: pointer;
     border-radius: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.3;
 }
 
-/* .customDots .slick-active {
-    height: 60px;
-} */
+.customDots li:hover,
+.customDots li:focus {
+    height: 50px;
+    opacity: 1;
+}
 
 .customDots li:not(:last-child) {
     margin-right: 15px;
 }
-  
-/* .customDots li button {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ccc;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-}
-  
-.customDots li.slick-active button {
-    background-color: #000;
-} */
 
 .customDot {
-    /* height: 100%;
-    width: 100%; */
+    position: relative;
     height: 100%;
     width: 100%;
 }
 
-.customDots li.slick-active {
-    height: 60px;
+.dotBtn {
+    position: absolute;
+    bottom: -150%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    color: var(--text-color-white);
 }
 
-/* .customDot:not(:last-child) {
-    margin-right: 10px;
-} */
+.playSlider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    width: 300px;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.playSlider:hover,
+.playSlider:focus {
+    width: 350px;
+}

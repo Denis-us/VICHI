@@ -6,18 +6,19 @@ import 'slick-carousel/slick/slick-theme.css';
 import jellyfishBlue from '../../pictures/jpg/jellyfish-blue.jpg';
 import jellyfishRed from '../../pictures/jpg/jellyfish-red.jpg';
 import jellyfishWhite from '../../pictures/jpg/jellyfish-white.jpg';
+import { ReactComponent as PlaySlider } from '../../pictures/svg/play-button-slider.svg';
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/icon-arrow-right-swiper.svg';
 import s from './ProjectSlider.module.css';
 
 
 const CustomPrevArrow = ({ onClick }) => (
-  <button onClick={onClick}>
+  <button onClick={onClick} className={s.btnArrow}>
     <ArrowSlider className={s.arrowSlider}/>
   </button>
 );
 
 const CustomNextArrow = ({ onClick }) => (
-  <button onClick={onClick}>
+  <button onClick={onClick} className={s.btnArrow}>
     <ArrowSlider className={`${s.arrowSlider} ${s.rotated}`}/>
   </button>
 );
@@ -26,7 +27,23 @@ const ProjectSlider = () => {
     const settings = {
       dots: true,
       dotsClass: s.customDots,
-      customPaging: () => <div className={s.customDot}></div>,
+      customPaging: (index) => <div className={s.customDot}>
+          <button className={s.dotBtn}>{`0${index+1}`}</button>
+        </div>,
+      appendDots: dots => (
+        <ul>
+          {dots.map((dot, index) => {
+            const classNames = `${dot.props.className}`;
+            const dotStyles = dot.props.className.includes('slick-active') ? {height: '50px', opacity: '1'} : {};
+      
+            return (
+              <li key={index} className={classNames} style={dotStyles}>
+                {dot.props.children}
+              </li>
+            );
+          })}
+        </ul>
+      ),
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -49,6 +66,7 @@ const ProjectSlider = () => {
             <img src={jellyfishWhite} className={s.slideImg} alt="jellyfish-white" />
           </div>
         </Slider>
+        <PlaySlider className={s.playSlider}></PlaySlider>
       </div>
       
     );
