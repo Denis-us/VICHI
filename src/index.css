@@ -11,6 +11,8 @@ body {
 :root {
   --text-color-white: #ececec;
   --accent-color: #fffc00;
+  --green: #90ff00;
+  --white: #fff;
 }
 
 code {

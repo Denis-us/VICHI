@@ -1,0 +1,54 @@
+.owner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.ownerMain {
+    background-image: url('../../pictures/png/owner.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    background-color: var(--white);
+    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
+    border-radius: 50px;
+    height: 800px;
+    width: 400px;
+    padding: 20px;
+    margin-right: 400px;
+    overflow: hidden;
+}
+
+.ownerEl {
+    background-image: url('../../pictures/png/logo-black.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: var(--white);
+    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
+    border-radius: 50px;
+    min-height: 200px;
+    width: 400px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.ownerEl:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.text {
+    color: var(--green);
+}
+
+.ownerImg {
+    width: 100%;
+}
+
+.ownerListImg {
+    width: 100%;
+}

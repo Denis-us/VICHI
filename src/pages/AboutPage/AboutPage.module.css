@@ -1,6 +1,4 @@
 .about {
-    height: 100vh;
-    background-image: url('../../pictures/jpg/jellyfish-white.jpg');
-    background-size: 100%;
-    background-position: center;
+    /* height: 100vh; */
+    background-color: var(--text-color-white);
 }

@@ -23,7 +23,6 @@
     position: absolute;
     top:0;
     left: 0;
-    /* padding: 10px 0; */
     font-size: 20px;
     color: var(--text-color-white);
     pointer-events: none;
@@ -43,11 +42,6 @@
     
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* .input:hover,
-.input:focus {
-    border-bottom: 1px solid #FEC62D;
-} */
 
 .input:hover ~ .label,
 .input:focus ~ .label{
