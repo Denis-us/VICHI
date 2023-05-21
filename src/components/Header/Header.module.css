@@ -16,6 +16,14 @@
     color: var(--text-color-white);
 }
 
+.logoLink {
+    text-align: center;
+}
+
+.logoLink:hover .logoName {
+    color: var(--accent-color);
+}
+
 .logo {
     display: flex;
     justify-content: center;
@@ -24,13 +32,11 @@
     overflow: hidden;
 }
 
-.logoImg {
-    width: 300px;
-}
-
 .logoName {
+    font-family: 'Xolonium';
     margin-top: 0;
     margin-bottom: 20px;
+    color: var(--text-color-white);
 }
 
 .pages {
@@ -93,9 +99,9 @@
     color: var(--text-color-white);
 }
 
-.lang {
+/* .lang {
     margin-bottom: 100px;
-}
+} */
 
 .langList {
     display: flex;
@@ -107,7 +113,9 @@
 }
 
 .langEl {
-    letter-spacing: -1px;
+    font-family: 'HeadingPro-Light';
+    font-size: 20px;
+    letter-spacing: 1px;
     position: relative;
     cursor: pointer;
     padding-bottom: 3px;
@@ -115,6 +123,7 @@
 
 .langEl:hover,
 .langEl:focus {
+    /* font-family: 'HeadingPro-Bold'; */
     color: var(--accent-color);
 }
 

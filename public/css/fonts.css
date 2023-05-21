@@ -7,3 +7,13 @@
     font-family: "Xolonium";
     src: url("../fonts/Xolonium.ttf");
 }
+
+@font-face {
+    font-family: "HeadingPro-Bold";
+    src: url("../fonts/HeadingPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "HeadingPro-Light";
+    src: url("../fonts/HeadingPro-Light.ttf");
+}

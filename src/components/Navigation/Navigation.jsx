@@ -1,4 +1,4 @@
-import { NavLink  } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import s from './Navigation.module.css';
 
 const setActive = ({isActive}) => isActive ? "link-active" : "link"

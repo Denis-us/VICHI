@@ -14,7 +14,7 @@
 
     background-color: var(--white);
     box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
-    border-radius: 50px;
+    border-radius: 20px;
     height: 800px;
     width: 400px;
     padding: 20px;
@@ -30,7 +30,7 @@
 
     background-color: var(--white);
     box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
-    border-radius: 50px;
+    border-radius: 20px;
     min-height: 200px;
     width: 400px;
     padding: 20px;
