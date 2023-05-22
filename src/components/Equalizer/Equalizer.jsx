@@ -25,7 +25,7 @@ const Equalizer = () => {
             <div className={s.equalizerText}>OCEAN</div>
         </div>
         <div className={s.description}>
-            <div className={s.production}>Production - VICI</div>
+            <div className={s.production}>Production - VICHI</div>
             <div className={s.director}>Director - MELNYK KOSTYA</div>
         </div>
     </div>
