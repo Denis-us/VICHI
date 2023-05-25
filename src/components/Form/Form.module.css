@@ -47,6 +47,11 @@
 .input:focus ~ .label{
     top: -20px;
     left: 0;
-    color: var(--text-color-white);
+    font-size: 12px;
+}
+
+.labelFull {
+    top: -20px;
+    left: 0;
     font-size: 12px;
 }

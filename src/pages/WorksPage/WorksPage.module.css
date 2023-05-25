@@ -3,8 +3,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(75, 71, 66);
-    /* background-image: url('../../pictures/jpg/team.jpg'); */
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
+
+    font-family: 'Xolonium-Bold';
 }
+
+.works::after {
+    content: "";
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }

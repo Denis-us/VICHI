@@ -6,7 +6,6 @@ import WorksPage from './pages/WorksPage'
 import ContactsPage from './pages/ContactsPage'
 import OrderPage from './pages/OrderPage'
 
-
 // const HomePage = lazy(() => import('./pages/HomePage'))
 // const About = lazy(() => import('./pages/About'))
 // const Services = lazy(() => import('./pages/Services'))

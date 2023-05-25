@@ -23,12 +23,15 @@ const mapOptions = {
           { "saturation": -100 },
           { "lightness": -5 }
         ]
-      }, {
+      },
+      {
         featureType: 'all',
         elementType: 'labels',
         stylers: [
             { invert_lightness: true },
-            { hue: '#FFFF00' },
+            { "saturation": -100 },
+            { "lightness": 40 },
+            { hue: '#FFFFFF' },
         ]
       }
       

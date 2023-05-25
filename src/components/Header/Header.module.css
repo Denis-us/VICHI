@@ -5,15 +5,16 @@
 
 .header {
     position: fixed;
-    right: 200px;
+    right: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 200px;
+    width: 20vh;
     height: 100vh;
     border-radius: 20px;
     background-color: #0d0d0d;
     color: var(--text-color-white);
+    z-index: 1;
 }
 
 .logoLink {
