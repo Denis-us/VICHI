@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
+
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/play-button-slider.svg';
-import './Slider.css'
+import Pagination from '../Pagination';
+import './Slider.css';
 
 
 const Slider = ({ slides, onSlideChange  }) => {
@@ -48,9 +50,14 @@ const Slider = ({ slides, onSlideChange  }) => {
     slideReset();
   }
 
+  const filteredSlides = slides.slice(
+    Math.max(0, activeSlide - 1),
+    Math.min(slides.length, activeSlide + 2)
+  );
+
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={3}
       centeredSlides={true}
@@ -70,9 +77,14 @@ const Slider = ({ slides, onSlideChange  }) => {
       className='swiper'
     >
 
+      <div className="pagination">
+        {filteredSlides.map((slide, index) => (
+          <Pagination slide={slide} index={activeSlide + index - 1} activeSlide={activeSlide} key={slide.id} />
+        ))}
+      </div>
 
       {slides.map((slide, index) => (
-        <SwiperSlide key={slide.alt} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
+        <SwiperSlide key={slide.id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
             onMouseOver={handleActiveSlideHover}
             onMouseEnter={handleActiveSlideHover}
             onMouseLeave={handleActiveSlideHover}>
@@ -99,6 +111,7 @@ const Slider = ({ slides, onSlideChange  }) => {
               <button className='btnOrder'>ORDER</button>
             </div>
           )}
+          
         </SwiperSlide>
       ))}
     </Swiper>

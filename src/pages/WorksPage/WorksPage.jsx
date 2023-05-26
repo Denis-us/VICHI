@@ -20,4 +20,4 @@ export default function WorksPage() {
             <Slider slides={slides} onSlideChange={onSlideChange}/>
         </div>
     )
-}
+};
