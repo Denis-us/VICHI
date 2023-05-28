@@ -1,7 +1,7 @@
 .paginationEl {
     position: relative;
-    width: 10px;
-    height: 60px;
+    width: 6px;
+    height: 40px;
     border-radius: 20px;
     background-color: var(--white);
 
@@ -12,18 +12,34 @@
     justify-content: center;
     cursor: pointer;
     z-index: 1;
+
+    display: none;
 }
 
 .paginationEl:not(:last-child) {
     margin-right: 100px;
 }
 
-.paginationEl .active {
+.active {
+    font-size: small;
+    height: 50px;
     opacity: 1;
+    display: block;
+}
+
+.nearActive {
+    opacity: 0.5;
+    display: block;
 }
 
 .paginationNumber {
     position: absolute;
     bottom: -25px;
+    left: -6px;
     color: var(--white);
 }
+
+.lastSlide {
+    margin-right: 100px;
+}
+  

@@ -50,10 +50,10 @@ const Slider = ({ slides, onSlideChange  }) => {
     slideReset();
   }
 
-  const filteredSlides = slides.slice(
-    Math.max(0, activeSlide - 1),
-    Math.min(slides.length, activeSlide + 2)
-  );
+  // const filteredSlides = slides.slice(
+  //   Math.max(0, activeSlide - 1),
+  //   Math.min(slides.length, activeSlide + 2)
+  // );
 
   return (
     <Swiper
@@ -78,8 +78,8 @@ const Slider = ({ slides, onSlideChange  }) => {
     >
 
       <div className="pagination">
-        {filteredSlides.map((slide, index) => (
-          <Pagination slide={slide} index={activeSlide + index - 1} activeSlide={activeSlide} key={slide.id} />
+        {slides.map((slide, index) => (
+          <Pagination slide={slide} lastSlide={slides.length-1} index={index} activeSlide={activeSlide} key={slide.id} />
         ))}
       </div>
 

@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import s from './Pagination.module.css'
 
-const Pagination = ({ slide, index, activeSlide }) => {
-//   const isActive = activeSlide === index;
-const isActive = (index === -1 && activeSlide === 0) || activeSlide === index;
+const Pagination = ({ slide, lastSlide, index, activeSlide }) => {
+  const isActive = activeSlide === index;
   const [opacity, setOpacity] = useState(isActive ? 1 : 0.5);
-  console.log(index)
-  console.log(activeSlide)
-  console.log(isActive)
 
   useEffect(() => {
     handleActiveClassChange()
@@ -18,9 +14,25 @@ const isActive = (index === -1 && activeSlide === 0) || activeSlide === index;
     setOpacity(isActive ? 1 : 0.5);
   };
 
+  const getPaginationClassName = () => {
+    let className = s.paginationEl;
+  
+    if (index === lastSlide) {
+      className += ` ${s.lastSlide}`;
+    }
+  
+    if (index === activeSlide) {
+      return `${className} ${s.active}`;
+    } else if (index === activeSlide - 1 || index === activeSlide + 1) {
+      return `${className} ${s.nearActive}`;
+    }
+  
+    return className;
+  };
+
   return (
     <div
-        className={`${s.paginationEl} ${isActive ? s.active : ''}`}
+        className={getPaginationClassName()}
         style={{ opacity }}
         key={slide.id}
     >
