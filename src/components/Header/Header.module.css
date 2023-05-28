@@ -5,11 +5,11 @@
 
 .header {
     position: fixed;
-    right: 20vh;
+    right: 18vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 20vh;
+    width: 18vh;
     height: 100vh;
     border-radius: 20px;
     background-color: #0d0d0d;
@@ -31,6 +31,10 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+}
+
+.logoImg {
+    width: 15vh;
 }
 
 .logoName {
@@ -100,10 +104,6 @@
     color: var(--text-color-white);
 }
 
-/* .lang {
-    margin-bottom: 100px;
-} */
-
 .langList {
     display: flex;
     justify-content: center;
@@ -128,22 +128,6 @@
     color: var(--accent-color);
 }
 
-/* .langEl:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: var(--text-color-white);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease-out;
-}
-
-.langEl:hover::after {
-    width: 100%;
-} */
-
 .btnPlay {
     position: relative;
     height: 50px;
@@ -167,16 +151,3 @@
     width: 70px;
     height: 70px;
 }
-
-/* .showreel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(270deg);
-}
-
-.showreelLink {
-    position: relative;
-    margin-right: 10px;
-    cursor: pointer;
-} */

@@ -1,13 +1,14 @@
 .socials {
+    font-family: 'HeadingPro-Bold';
     position: fixed;
-    /* left: 100px; */
+    left: 0;
     top: 50%;
     bottom: 50%;
+    z-index: 1;
 }
 
 .list {
     display: flex;
-    color: var(--text-color-white);
     transform: rotate(270deg);
 }
 

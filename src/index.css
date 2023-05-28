@@ -3,13 +3,11 @@ body {
   font-family: 'Xolonium-Bold', 'Xolonium', 'HeadingPro-Bold', 'HeadingPro-Light';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* background-image: url('../src/pictures/background-img/space.jpg');
-  background-size: 100%; */
 }
 
 :root {
   --text-color-white: #ececec;
+  --text-color-grey: rgb(104, 104, 104);
   --accent-color: #fffc00;
   --green: #90ff00;
   --white: #fff;

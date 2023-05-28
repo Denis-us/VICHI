@@ -5,11 +5,12 @@ import s from './HomePage.module.css'
 
 
 export default function HomePage() {
+    const color = '#ececec'
 
     return(
         <div className={s.home}>
             <Header/>
-            <SocialMedia/>
+            <SocialMedia color={color}/>
             <Equalizer/>
         </div>
     )

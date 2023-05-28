@@ -1,9 +1,9 @@
 import s from './SocialMedia.module.css';
 
-const SocialMedia = () => {
+const SocialMedia = ({color}) => {
 
     return (
-        <div className={s.socials}>
+        <div className={s.socials} style={{color: color}}>
             <ul className={s.list}>
                 <li className={s.listEl}>
                     <button className={s.socialLink}>YOUTUBE</button>

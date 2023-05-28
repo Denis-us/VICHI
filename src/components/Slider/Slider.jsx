@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/play-button-slider.svg';
+import { ReactComponent as ArrowRight } from '../../pictures/svg/icon-arrow-right-swiper.svg';
 import Pagination from '../Pagination';
 import './Slider.css';
 
@@ -11,6 +12,7 @@ import './Slider.css';
 const Slider = ({ slides, onSlideChange  }) => {
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [swiper, setSwiper] = useState(null);
 
   const handleSlideChange = (swiper) => {
       const activeIndex = swiper.realIndex;
@@ -26,7 +28,7 @@ const Slider = ({ slides, onSlideChange  }) => {
 
     if(slide.classList.contains('swiper-slide-active')) {
       if(e.type === 'mouseleave') {
-        picture.style.width = '250px';
+        picture.style.width = '25vh';
         descriptionElement.style.opacity = '0';
         icoPlayElement.style.opacity = '0';
       }
@@ -41,19 +43,15 @@ const Slider = ({ slides, onSlideChange  }) => {
   const slideReset = () => {
     const pictures = document.querySelectorAll('.picture');
     pictures.forEach((picture) => {
-      picture.style.width = '250px';
+      picture.style.width = '20vh';
     });
   }
 
   const handleSlideChangeAndReset = (swiper) => {
     handleSlideChange(swiper);
     slideReset();
+    setSwiper(swiper);
   }
-
-  // const filteredSlides = slides.slice(
-  //   Math.max(0, activeSlide - 1),
-  //   Math.min(slides.length, activeSlide + 2)
-  // );
 
   return (
     <Swiper
@@ -61,8 +59,12 @@ const Slider = ({ slides, onSlideChange  }) => {
       spaceBetween={50}
       slidesPerView={3}
       centeredSlides={true}
-      navigation
-      // pagination={{ clickable: true }}
+      navigation={{
+        nextEl: '.slider-button-next',
+        prevEl: '.slider-button-prev',
+        clickable: true
+      }}
+      // pagination={{ el: '.swiper-pagination', clickable: true }}
       scrollbar={{ draggable: true }}
       effect={"coverflow"}
         coverflowEffect={{
@@ -77,7 +79,7 @@ const Slider = ({ slides, onSlideChange  }) => {
       className='swiper'
     >
 
-      <div className="pagination">
+      <div className="swiper-pagination">
         {slides.map((slide, index) => (
           <Pagination slide={slide} lastSlide={slides.length-1} index={index} activeSlide={activeSlide} key={slide.id} />
         ))}
@@ -114,6 +116,16 @@ const Slider = ({ slides, onSlideChange  }) => {
           
         </SwiperSlide>
       ))}
+      
+      <div className='slider-controler'>
+        <div className='swiper-button-prev' onClick={() => swiper && swiper.slidePrev()}>
+          <ArrowRight className='button-prev-slide'/>
+        </div>
+        <div className='swiper-button-next' onClick={() => swiper && swiper.slideNext()}>
+          <ArrowRight className='button-next-slide'/>
+        </div>
+      </div>
+
     </Swiper>
   );
 };
