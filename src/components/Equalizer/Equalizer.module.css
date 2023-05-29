@@ -1,7 +1,7 @@
 .equalizerBlock {
     position: absolute;
-    bottom: 50px;
-    left: 250px;
+    bottom: 10vh;
+    left: 40vh;
     font-family: 'Xolonium';
     color: var(--white);
     font-size: 15px;
@@ -10,11 +10,11 @@
 .equalizerHeader {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .equalizerName {
-    font-size: 25px;
+    font-size: 22px;
     margin-right: 25px;
 }
 
@@ -22,24 +22,21 @@
     display: flex;
     /* justify-content: space-around; */
     align-items: flex-end;
-    height: 100px;
+    height: 50px;
     margin-right: 25px;
+    padding-bottom: 5px;
 }
   
 .bar {
-    width: 20px; /* Ширина столбиков */
+    width: 5px; /* Ширина столбиков */
     background-color: var(--text-color-white);
     transition: height 0.3s;
 }
 
 .bar:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
-/* .equalizerText {
-    font-size: 30px;
-} */
-
 .production {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }

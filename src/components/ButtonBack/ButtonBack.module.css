@@ -1,0 +1,14 @@
+.button {
+    position: absolute;
+    left: 15vh;
+    top: 10vh;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.ico {
+    border-radius: 50%;
+    color: var(--accent-color);
+}

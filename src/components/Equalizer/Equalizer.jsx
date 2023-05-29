@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import s from './Equalizer.module.css';
 
 const Equalizer = () => {
-  const [barHeight, setBarHeight] = useState([50, 75, 100]); // Начальные значения высоты столбиков
+  const [barHeight, setBarHeight] = useState([10, 25, 50]); // Начальные значения высоты столбиков
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -21,10 +21,6 @@
     text-align: center;
 }
 
-.logoLink:hover .logoName {
-    color: var(--accent-color);
-}
-
 .logo {
     display: flex;
     justify-content: center;
@@ -34,7 +30,7 @@
 }
 
 .logoImg {
-    width: 15vh;
+    width: 12vh;
 }
 
 .logoName {
@@ -104,6 +100,10 @@
     color: var(--text-color-white);
 }
 
+.lang {
+
+}
+
 .langList {
     display: flex;
     justify-content: center;
@@ -130,17 +130,15 @@
 
 .btnPlay {
     position: relative;
-    height: 50px;
     text-align: center;
 }
 
 .iconArrow {
     position: absolute;
+    height: 5vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
     color: var(--accent-color);
     /* fill: var(--accent-color); */
     cursor: pointer;

@@ -6,13 +6,13 @@ const SocialMedia = ({color}) => {
         <div className={s.socials} style={{color: color}}>
             <ul className={s.list}>
                 <li className={s.listEl}>
-                    <button className={s.socialLink}>YOUTUBE</button>
+                    <a href="https://www.instagram.com/vichi.agency/?igshid=MmJiY2I4NDBkZg%3D%3D" className={s.socialLink}>INSTAGRAM</a>
                 </li>
                 <li className={s.listEl}>
-                    <button className={s.socialLink}>FACEBOOK</button>
+                    <a href="https://www.instagram.com/vichi.agency/?igshid=MmJiY2I4NDBkZg%3D%3D" className={s.socialLink}>YOUTUBE</a>
                 </li>
                 <li className={s.listEl}>
-                    <button className={s.socialLink}>INSTAGRAM</button>
+                    <a href="https://www.instagram.com/vichi.agency/?igshid=MmJiY2I4NDBkZg%3D%3D" className={s.socialLink}>FACEBOOK</a>
                 </li>
             </ul>
         </div>   

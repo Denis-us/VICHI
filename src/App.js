@@ -1,29 +1,31 @@
-import './App.css';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
-import WorksPage from './pages/WorksPage'
-import ContactsPage from './pages/ContactsPage'
-import OrderPage from './pages/OrderPage'
 
-// const HomePage = lazy(() => import('./pages/HomePage'))
-// const About = lazy(() => import('./pages/About'))
-// const Services = lazy(() => import('./pages/Services'))
-// const Contacts = lazy(() => import('./pages/Contacts'))
-// const Order = lazy(() => import('./pages/Order'))
+import './App.css';
+import logo from './pictures/svg/logo-black.svg';
 
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const WorksPage = lazy(() => import('./pages/WorksPage'));
+const ContactsPage = lazy(() => import('./pages/ContactsPage'));
+const OrderPage = lazy(() => import('./pages/OrderPage'));
 
 export default function App() {
 
   return (
-    <Routes>
+    <Suspense fallback={
+        <div className='loading'>
+          <img src={logo} alt="logo" className='logo'/>
+        </div>}>
 
-      <Route path="/" element={<HomePage/>}/>
-      <Route path="/about" element={<AboutPage/>}/>
-      <Route path="/works" element={<WorksPage/>}/>
-      <Route path="/contacts" element={<ContactsPage/>}/>
-      <Route path="/order" element={<OrderPage/>}/>
-
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/about" element={<AboutPage/>} />
+        <Route path="/works" element={<WorksPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/order" element={<OrderPage />} />
+      </Routes>
+    
+    </Suspense>
   );
 }
