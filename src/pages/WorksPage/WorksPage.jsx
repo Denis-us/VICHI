@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../../components/Header';
 import ButtonBack from '../../components/ButtonBack';
 import SocialMedia from '../../components/SocialMedia'
 import Slider from '../../components/Slider';
-import slides from '../../images.json';
 import s from './WorksPage.module.css';
+import fetch from "../../services/axios"
 
 
 export default function WorksPage() {
+    const [photos, setPhotos] = useState([])
+
+    useEffect(() => {
+        fetch.getAllPicture().then(res =>
+            setPhotos(res.data.data.photos))
+    }, [])
 
     const [bgImg, setBgImg] = useState('');
 
@@ -22,7 +28,7 @@ export default function WorksPage() {
             <ButtonBack/>
             <Header/>
             <SocialMedia color={color}/>
-            <Slider slides={slides} onSlideChange={onSlideChange}/>
+            <Slider photos={photos} onSlideChange={onSlideChange}/>
         </div>
     )
 };

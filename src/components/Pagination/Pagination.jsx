@@ -34,9 +34,9 @@ const Pagination = ({ slide, lastSlide, index, activeSlide }) => {
     <div
         className={getPaginationClassName()}
         style={{ opacity }}
-        key={slide.id}
+        key={slide._id}
     >
-      <span className={s.paginationNumber}>{slide.id}</span>
+      <span className={s.paginationNumber}>{`0${index+1}`.padStart(2, '0')}</span>
     </div>
   );
 };

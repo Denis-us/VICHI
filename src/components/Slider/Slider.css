@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     width: 140vh;
-    /* padding-left: 50px; */
     padding-right: 50px;
     padding-top: 25vh;
     padding-bottom: 20vh;
@@ -17,12 +16,9 @@
 .picture {
     position: relative;
     height: 45vh;
+    width: 20vh;
     transition: all 0.3s;
     transform: scale(1);
-}
-
-.swiper-slide-active .picture {
-    transform: scale(1.2);
 }
 
 .number {
@@ -69,6 +65,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    opacity: 0.3;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
@@ -76,6 +73,11 @@
     opacity: 1;
     transform: translateX(0);
     z-index: 2;
+}
+
+.swiper-slide-active .picture {
+    width: 25vh;
+    transform: scale(1.2);
 }
 
 .swiper-scrollbar {
@@ -96,16 +98,6 @@
 
 .swiper-button-next::after {
     color: var(--accent-color);
-}
-
-.swiper-slide-prev {
-    opacity: 0.3;
-    transform: translateX(0);
-}
-
-.swiper-slide-next {
-    opacity: 0.3;
-    transform: translateX(0);
 }
 
 .from {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
@@ -9,15 +9,24 @@ import Pagination from '../Pagination';
 import './Slider.css';
 
 
-const Slider = ({ slides, onSlideChange  }) => {
+const Slider = ({ onSlideChange, photos }) => {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [swiper, setSwiper] = useState(null);
 
+  useEffect(() => {
+    if (photos.length > 0) {
+      onSlideChange(photos[0]);
+    }
+    // eslint-disable-next-line
+  }, [photos]);
+
   const handleSlideChange = (swiper) => {
       const activeIndex = swiper.realIndex;
       setActiveSlide(activeIndex);
-      onSlideChange && onSlideChange(slides[activeIndex]);
+      if (photos.length > 0) {
+        onSlideChange(photos[activeIndex]);
+      }
   };
 
   const handleActiveSlideHover = (e) => {
@@ -48,9 +57,9 @@ const Slider = ({ slides, onSlideChange  }) => {
   }
 
   const handleSlideChangeAndReset = (swiper) => {
+    setSwiper(swiper);
     handleSlideChange(swiper);
     slideReset();
-    setSwiper(swiper);
   }
 
   return (
@@ -76,24 +85,22 @@ const Slider = ({ slides, onSlideChange  }) => {
       }}
       onSlideChange={handleSlideChangeAndReset}
       onSwiper={(swiper) => handleSlideChangeAndReset(swiper)}
-      className='swiper'
     >
 
       <div className="swiper-pagination">
-        {slides.map((slide, index) => (
-          <Pagination slide={slide} lastSlide={slides.length-1} index={index} activeSlide={activeSlide} key={slide.id} />
+        {photos.map((slide, index) => (
+          <Pagination slide={slide} lastSlide={photos.length-1} index={index} activeSlide={activeSlide} key={slide._id} />
         ))}
       </div>
 
-      {slides.map((slide, index) => (
-        <SwiperSlide key={slide.id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
+      {photos.map((slide, index) => (
+        <SwiperSlide key={slide._id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
             onMouseOver={handleActiveSlideHover}
             onMouseEnter={handleActiveSlideHover}
             onMouseLeave={handleActiveSlideHover}>
           
-          
           <div className='picture'>
-            <p className='number'>{slide.id}</p>
+            <p className='number'>{`0${index+1}`.padStart(2, '0')}</p>
             <img src={slide.image} alt={slide.alt} className='image'/>
             {activeSlide === index && (
               <ArrowSlider className='icoPlay'/>
