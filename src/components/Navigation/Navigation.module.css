@@ -1,11 +1,7 @@
-.navigation {
-    margin-bottom: 15vh;
-}
-
 .navigationList {
     text-align: center;
 }
 
 .navigationEl:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }

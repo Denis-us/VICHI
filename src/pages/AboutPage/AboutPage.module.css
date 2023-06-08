@@ -1,3 +1,4 @@
 .about {
-    background-color: var(--text-color-white);
+    background-image: url('../../pictures/jpg/aboutbg.jpg');
+    height: 100vh;
 }

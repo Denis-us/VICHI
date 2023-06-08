@@ -1,0 +1,20 @@
+.worksPagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.pages {
+    font-family: 'FuturaPT-Light';
+    font-size: 15px;
+    color: var(--accent-color);
+}
+
+.arrow {
+    width: 15px;
+}
+
+.prevPage {
+    rotate: 180deg;
+}

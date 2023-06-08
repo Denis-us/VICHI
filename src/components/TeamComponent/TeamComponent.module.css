@@ -1,0 +1,63 @@
+.owner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.ownerMain {
+    background-image: url('../../pictures/png/owner.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    background-color: var(--header-bg);
+    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
+    border-radius: 50px;
+    height: 605px;
+    width: 320px;
+    margin-right: 80px;
+    overflow: hidden;
+}
+
+.ownerList {
+    height: 605px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ownerEl {
+    background-image: url('../../pictures/png/logo.png');
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: var(--header-bg);
+    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
+    border-radius: 50px;
+    height: 250px;
+    width: 160px;
+    overflow: hidden;
+}
+
+.ownerEl:nth-child(odd) {
+    margin-right: 80px;
+  }
+
+.ownerEl:nth-child(-n+2) {
+    margin-bottom: 105px;
+}
+
+.text {
+    color: var(--green);
+}
+
+.ownerImg {
+    width: 100%;
+}
+
+.ownerListImg {
+    width: 100%;
+}

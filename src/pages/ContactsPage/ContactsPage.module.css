@@ -1,6 +1,16 @@
 .contacts {
+    background-image: url('../../pictures/jpg/aboutbg.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    /* background-image: url('../../pictures/jpg/jellyfish-blue.jpg'); */
-    background-size: 100%;
-    background-position: center;
+    /* background-size: 100%;
+    background-position: center; */
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 90px;
 }

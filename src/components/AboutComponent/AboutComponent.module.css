@@ -1,0 +1,86 @@
+.aboutBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.aboutList {
+    height: 605px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aboutEl:not(:last-child) {
+    margin-right: 160px;
+}
+
+.aboutEl {
+    position: relative;
+    font-family: 'FuturaPT-Light';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+
+    background-color: var(--header-bg);
+    border-radius: 50px;
+    height: 100%;
+    width: 160px;
+    overflow: hidden;
+
+    cursor: pointer
+
+}
+
+.aboutEl::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--accent-color);
+    top: 0;
+    left: 0;
+
+    transform: translateY(-101%);
+    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hiddenText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 605px;
+
+    position: absolute;
+    color: var(--black);
+    top: 0;
+    left: 0;
+    padding: 30px 27px 30px 27px;
+    box-sizing: border-box;
+    transform: translateY(-101%);
+    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aboutEl:hover::before,
+.aboutEl:focus::before,
+.aboutEl:hover .hiddenText,
+.aboutEl:focus .hiddenText {
+    transform: translateY(0%)
+}
+
+.hiddenHeader {
+    font-family: 'FuturaPT-Bold';
+}
+
+.hiddenDescription {
+    font-family: 'FuturaPT-Light';
+}
+
+.hiddenLink {
+    font-family: 'FuturaPT-Bold';
+    text-decoration: underline;
+}

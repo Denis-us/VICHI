@@ -17,3 +17,38 @@
     font-family: "HeadingPro-Light";
     src: url("../fonts/HeadingPro-Light.ttf");
 }
+
+@font-face {
+    font-family: "FuturaPT-Light";
+    src: url("../fonts/FuturaPT-Light.ttf");
+}
+
+@font-face {
+    font-family: "FuturaPT-Medium";
+    src: url("../fonts/FuturaPT-Medium.ttf");
+}
+
+@font-face {
+    font-family: "FuturaPT-Bold";
+    src: url("../fonts/FuturaPT-Bold.ttf");
+}
+
+@font-face {
+    font-family: "IntegralCF-Bold";
+    src: url("../fonts/IntegralCF-Bold.ttf");
+}
+
+@font-face {
+    font-family: "IntegralCF-DemiBold";
+    src: url("../fonts/IntegralCF-DemiBold.ttf");
+}
+
+@font-face {
+    font-family: "IntegralCF-Medium";
+    src: url("../fonts/IntegralCF-Medium.ttf");
+}
+
+@font-face {
+    font-family: "IntegralCF-Regular";
+    src: url("../fonts/IntegralCF-Regular.ttf");
+}

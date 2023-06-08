@@ -45,6 +45,7 @@ const Form = () => {
                     <input id="description" type="text" name="description" required="" autoComplete="off" className={s.input} value={descriptionValue} onChange={handleChange}/>
                     <label className={s.label} htmlFor="description">PHONE</label>
                 </div>
+                <button className={s.btnForm}>SEND</button>
             </form>
         </div>   
     );

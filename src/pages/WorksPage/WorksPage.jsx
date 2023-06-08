@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import Container from '../../components/Container';
 import Header from '../../components/Header';
 import ButtonBack from '../../components/ButtonBack';
 import SocialMedia from '../../components/SocialMedia'
-import Slider from '../../components/Slider';
+import SliderNew from '../../components/SliderNew';
 import s from './WorksPage.module.css';
 import fetch from "../../services/axios"
 
@@ -25,10 +26,12 @@ export default function WorksPage() {
 
     return(
         <div className={s.works} style={{backgroundImage: `url(${bgImg})`}}>
-            <ButtonBack/>
-            <Header/>
-            <SocialMedia color={color}/>
-            <Slider photos={photos} onSlideChange={onSlideChange}/>
+            <Container>
+                <ButtonBack/>
+                <Header/>
+                <SocialMedia color={color}/>
+                <SliderNew photos={photos} onSlideChange={onSlideChange}/>
+            </Container>
         </div>
     )
 };

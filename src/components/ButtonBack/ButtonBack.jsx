@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import s from './ButtonBack.module.css';
-import { ReactComponent as ArrowBack } from '../../pictures/svg/arrow-back.svg';
+import { ReactComponent as ArrowBack } from '../../pictures/svg/btn-back.svg';
 
-const ButtonBack = () => {
+const ButtonBack = ({btnTop}) => {
     const navigate = useNavigate();
 
     const goBack = () => {
@@ -10,7 +10,7 @@ const ButtonBack = () => {
     };
 
     return (
-        <button className={s.button} onClick={goBack}>
+        <button className={s.button} onClick={goBack} style={{top: btnTop}}>
             <ArrowBack className={s.ico}/>
         </button>   
     );

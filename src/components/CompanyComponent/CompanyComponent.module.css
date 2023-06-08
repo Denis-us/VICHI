@@ -1,0 +1,45 @@
+.companyBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.company {
+    width: 800px;
+    height: 605px;
+    color: var(--white);
+    background-color: var(--header-bg);
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 50px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'FuturaPT-Bold';
+    font-size: 80px;
+    margin-bottom: 80px;
+}
+
+.description {
+    font-family: 'FuturaPT-Light';
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btnScroll {
+    
+    cursor: pointer;
+    font-family: 'FuturaPT-Light';
+    font-size: 10px;
+}
+
+.btnScroll:hover {
+    color: var(--accent-color);
+}

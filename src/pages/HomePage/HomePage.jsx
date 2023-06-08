@@ -1,3 +1,4 @@
+import Container from '../../components/Container';
 import Header from '../../components/Header';
 import SocialMedia from '../../components/SocialMedia';
 import Equalizer from '../../components/Equalizer';
@@ -9,9 +10,11 @@ export default function HomePage() {
 
     return(
         <div className={s.home}>
-            <Header/>
-            <SocialMedia color={color}/>
-            <Equalizer/>
+            <Container>
+                <Header/>
+                <SocialMedia color={color}/>
+                <Equalizer/>
+            </Container>
         </div>
     )
 }

@@ -1,24 +1,29 @@
 .socials {
     font-family: 'HeadingPro-Light';
-    position: fixed;
-    left: 5vh;
-    top: 50vh;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
+    color: var(--white);
 }
 
 .list {
     display: flex;
     align-items: center;
+    background-color: var(--header-bg);
+    padding: 16px 18px 16px 18px;
+    border-radius: 50px;
+    box-sizing: border-box;
     transform: rotate(270deg);
 }
 
 .listEl:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .socialLink {
     cursor: pointer;
-    font-size: px;
     transition: color 0.3s ease;
 }
 
