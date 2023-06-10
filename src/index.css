@@ -20,7 +20,7 @@ code {
     monospace;
 }
 
-h1, h2, h3, li, ul, p {
+h1, h2, h3, h4, h5, li, ul, p {
   margin-block-start: 0;
   margin-block-end: 0;
   margin: 0;
@@ -41,6 +41,19 @@ button {
   background-color: inherit;
   color: inherit;
   padding: 0;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  width: 30vh;
 }
 
 .link {
