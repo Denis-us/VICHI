@@ -113,16 +113,17 @@
 .btnPlay {
     position: relative;
     text-align: center;
+    height: 50px;
 }
 
 .iconArrow {
     position: absolute;
-    height: 5vh;
+    width: 50px;
+    height: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--accent-color);
-    /* fill: var(--accent-color); */
     cursor: pointer;
     transition: all 0.3s ease-out;
 }

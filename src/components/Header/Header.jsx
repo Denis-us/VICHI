@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 import logo from '../../pictures/svg/logo.svg';
 import { ReactComponent as IconArrow } from '../../pictures/svg/arrow-play-nav.svg';
@@ -22,7 +22,9 @@ const Header = () => {
             <Lang/>
             
             <div className={s.btnPlay}>
-                <IconArrow className={s.iconArrow}/>
+                <Link to="/works/all/player">
+                    <IconArrow className={s.iconArrow}/>
+                </Link>
             </div>
         </div>
     );

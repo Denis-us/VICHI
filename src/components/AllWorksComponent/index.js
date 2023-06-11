@@ -1,1 +1,1 @@
-export {default} from './AllWorksComponent';
+export {default} from './AllWorksComponent'

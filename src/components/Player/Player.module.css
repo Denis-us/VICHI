@@ -15,23 +15,76 @@
     left: 0;
     right: 0;
     bottom: 0; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: ; */
     width: 100%;
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.3);
-    /* z-index: 1; */
     color: var(--white);
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.mouseActive {
+    opacity: 1
+}
+
+.topControls {
+    display: flex;
+    align-items: center;
+}
+
+.btnBackPlayer {
+    position: relative;
+    margin-right: 30px;
 }
 
 .playerTitle {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     font-size: 40px;
+}
+
+.middleControls {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btnMore {
+    position: relative;
+    font-family: 'FuturaPT-Light';
+    font-size: 35px;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 30px;
+    transition: color 0.3s;
+}
+
+.btnMore:hover,
+.btnMore:focus {
+    color: var(--accent-color);
+}
+
+.btnMore:hover::after,
+.btnMore:focus::after {
+    background-color: var(--accent-color);
+}
+
+.btnMore::after {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-20%);
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: background-color 0.3s;
 }
 
 .bottomControls {
@@ -63,13 +116,13 @@
     position: relative;
     margin-right: 30px;
     cursor: pointer;
-  }
+}
   
 .slider {
     width: 0;
     height: 100%;
     background-color: var(--accent-color);
-  }
+}
   
 .sliderHandle {
     width: 10px;
@@ -80,7 +133,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 .play {
     display: flex;
@@ -88,22 +141,21 @@
     justify-content: center;
     width: 30px;
     margin-right: 30px;
-    cursor: pointer;
 }
 
 .iconPlay {
     width: 20px;
     height: 30px;
-    transform: scale(0.9);
-    transform-origin: center;
-    transition: transform 0.5s;
-    
 }
 
-.iconPause {
+.iconPause,
+.iconPlay,
+.iconVolume,
+.iconMute {
     transform: scale(0.9);
     transform-origin: center;
     transition: transform 0.5s;
+    cursor: pointer;
 }
 
 .volumeWrapper {
@@ -111,18 +163,17 @@
     align-items: center;
     width: 30px;
 }
-
-.iconVolume,
-.iconSoundless {
-    width: 10px;
+.iconMute {
+    width: 20px;
     height: 30px;
-    transform: scale(0.9);
-    transform-origin: center;
-    transition: transform 0.5s;
-    cursor: pointer;
 }
 
-.iconHover:hover .iconSoundless,
+.iconVolume {
+    width: 10px;
+    height: 30px;
+}
+
+.iconHover:hover .iconMute,
 .iconHover:hover .iconVolume,
 .iconHover:hover .iconPlay,
 .iconHover:hover .iconPause {

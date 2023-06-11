@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.min.css';
 
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/btn-play-slider.svg';
 import { ReactComponent as ArrowRight } from '../../pictures/svg/prev-next.svg';
-import PaginationSlider from '../PaginationSlider';
+// import PaginationSlider from '../PaginationSlider';
 import BtnViewAll from '../BtnViewAll';
 import './SliderNew.css';
 
@@ -15,13 +15,31 @@ const SliderNew = ({ onSlideChange, photos }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [swiper, setSwiper] = useState(null);
   
-   useEffect(() => {
+  useEffect(() => {
     if (photos.length > 0) {
       onSlideChange(photos[0]);
     }
     
   // eslint-disable-next-line
   }, [photos]);
+
+  useEffect(() => {
+    const handleKeyboardNavigation = (event) => {
+      if (swiper) {
+        if (event.key === 'ArrowLeft') {
+          swiper.slidePrev();
+        } else if (event.key === 'ArrowRight') {
+          swiper.slideNext();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyboardNavigation);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyboardNavigation);
+    };
+  }, [swiper]);
 
   const handleSlideChange = (swiper) => {
     const activeIndex = swiper.realIndex;
@@ -93,11 +111,11 @@ const SliderNew = ({ onSlideChange, photos }) => {
       onSwiper={(swiper) => handleSlideChangeAndReset(swiper)}
     >
 
-      <div className="swiper-pagination">
+      {/* <div className="swiper-pagination">
         {photos.map((slide, index) => (
           <PaginationSlider slide={slide} lastSlide={photos.length-1} index={index} activeSlide={activeSlide} key={slide._id} />
         ))}
-      </div>
+      </div> */}
 
       {photos.map((slide, index) => (
         <SwiperSlide key={slide._id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}

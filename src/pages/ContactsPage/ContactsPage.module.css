@@ -1,11 +1,10 @@
 .contacts {
     background-image: url('../../pictures/jpg/aboutbg.jpg');
+    background-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background-size: 100%;
-    background-position: center; */
 }
 
 .map {

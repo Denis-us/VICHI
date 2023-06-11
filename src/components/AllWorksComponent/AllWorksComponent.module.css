@@ -6,21 +6,29 @@
     height: 100vh;
 }
 
+.worksEl {
+    overflow: hidden;
+}
+
 .work {
     position: relative;
     width: 800px;
     height: 160px;
-    color: var(--white);
-    background-color: rgb(99, 121, 113);
     border-radius: 50px;
     margin-bottom: 30px;
-
+    color: var(--white);
+    background-color: rgb(179, 177, 88);
+    
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
-.workName {
+.work:hover .workHidden,
+.work:focus .workHidden {
+    transform: translateX(0%);
+}
+
+.workTitle {
     font-family: 'FuturaPT-Light';
     font-size: 40px;
     margin-left: 95px;
@@ -33,4 +41,75 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.workHidden {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    color: var(--white);
+    padding-top: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.workDescription {
+    margin-bottom: 30px;
+}
+
+.workDescriptionStr {
+    display: flex;
+    align-items: center;
+}
+
+.workDescriptionStr:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.workName {
+    font-family: "FuturaPT-Light";
+    font-size: 15px;
+}
+
+.workValue {
+    position: relative;
+    font-family: "FuturaPT-Bold";
+    font-size: 15px;
+    margin-left: 16px;
+}
+
+.workValue::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--white);
+    left: -8px;
+}
+
+.workDuration {
+    font-family: 'FuturaPT-Light';
+    font-size: 15px;
+}
+
+.numberHidden {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    font-family: "FuturaPT-Bold";
+    font-size: 18px;
 }

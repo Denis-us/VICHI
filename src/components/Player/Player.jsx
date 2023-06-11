@@ -1,13 +1,16 @@
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import ReactPlayer from 'react-player';
+import { Link, useLocation } from 'react-router-dom';
+import ButtonBack from '../../components/ButtonBack';
 import { ReactComponent as IconPlay } from '../../pictures/svg/arrow-play-nav.svg';
 import { ReactComponent as Volume } from '../../pictures/svg/volume.svg';
-import { ReactComponent as Soundless } from '../../pictures/svg/soundless.svg';
+import { ReactComponent as Mute } from '../../pictures/svg/mute.svg';
 import { ReactComponent as Pause } from '../../pictures/svg/pause.svg';
 import s from './Player.module.css';
 
 const Player = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMouseActive, setIsMouseActive] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isSeeking] = useState(false);
@@ -17,6 +20,30 @@ const Player = () => {
   const controlsRef = useRef(null);
   const playBtnRef = useRef(null);
   const [mute, setMute] = useState(false);
+
+  const location = useLocation();
+  const viewMoreInfoUrl = `${location.pathname}/work-info`;
+
+  useEffect(() => {
+    let timeout;
+
+    const handleMouseMove = () => {
+      setIsMouseActive(true);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setIsMouseActive(false);
+      }, 3000);
+    };
+
+    const controls = controlsRef.current;
+
+    controls.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      controls.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const handlePlayPause = (event) => {
     const target = event.target
@@ -82,6 +109,12 @@ const Player = () => {
     setMute((prevMute) => !prevMute);
   };
 
+  const btnBackStyle = {
+    position: 'relative',
+    marginRight: '30px',
+    top: '0'
+  }
+
     return (
         <>
             <div className={s.playerWrapper} >
@@ -94,14 +127,23 @@ const Player = () => {
                     playing={isPlaying}
                     onProgress={handleProgress}
                     onDuration={handleDuration}
-                    volume={mute ? 0 : 1}
+                    volume={mute ? 0 : 0.5}
                 />
             </div>
         
-            <div className={s.controlsWrapper} ref={controlsRef} onClick={handlePlayPause}>
-                <h5 className={s.playerTitle}>Video title</h5>
+            <div className={`${s.controlsWrapper} ${isMouseActive && s.mouseActive}`} ref={controlsRef} onClick={handlePlayPause}>
+                
+              <div className={s.topControls}>
+                  <ButtonBack playerBtn={btnBackStyle}/>
+                  <h5 className={s.playerTitle}>Diablo IV</h5>
+              </div>
 
-                <div className={s.bottomControls}>
+              <div className={s.middleControls}>
+                  <Link to={ viewMoreInfoUrl } className={s.btnMore}>more about this work</Link>
+              </div>
+                
+
+              <div className={s.bottomControls}>
                     <div className={s.time}>{formatTime(currentTime)}</div>
 
                     <div className={s.sliderContainer} ref={sliderRef} onClick={handleSeek}>
@@ -116,10 +158,11 @@ const Player = () => {
                     </div>
                     
                     <div className={`${s.volumeWrapper} ${s.iconHover}`} onClick={handleMuteClick}>
-                        <Volume className={s.iconVolume}/>
-                        {mute && <Soundless className={s.iconSoundless} />}
+                        {mute
+                        ? <Mute className={s.iconMute}/>
+                        : <Volume className={s.iconVolume}/>}
                     </div>
-                </div>
+              </div>
             </div>
         </>
         

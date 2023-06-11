@@ -10,6 +10,7 @@ const CompanyPage = lazy(() => import('./pages/CompanyPage'));
 const WorksPage = lazy(() => import('./pages/WorksPage'));
 const AllWorksPage = lazy(() => import('./pages/AllWorksPage'));
 const PlayerPage = lazy(() => import('./pages/PlayerPage'));
+const OneWorkPage = lazy(() => import('./pages/OneWorkPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage'));
 const OrderPage = lazy(() => import('./pages/OrderPage'));
 const TestPage = lazy(() => import('./pages/TestPage'));
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/works" element={<WorksPage />} />
         <Route path="/works/all" element={<AllWorksPage />} />
         <Route path="/works/all/player" element={<PlayerPage />} />
+        <Route path="/works/all/player/work-info" element={<OneWorkPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/test" element={<TestPage />} />

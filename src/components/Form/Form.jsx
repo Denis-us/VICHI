@@ -34,15 +34,15 @@ const Form = () => {
         <div className={s.blockForm}>
             <form className={s.form}>
                 <div className={s.inputBox}>
-                    <input id="name" type="name" name="name" required="" autoComplete="off" className={s.input} value={nameValue} onChange={handleChange}/>
+                    <input id="name" type="name" name="name" required autoComplete="off" className={s.input} value={nameValue} onChange={handleChange}/>
                     <label className={s.label} htmlFor="name">NAME</label>
                 </div>
                 <div className={s.inputBox}>
-                    <input id="email" type="email" name="email" required="" autoComplete="off" className={s.input} value={emailValue} onChange={handleChange}/>
+                    <input id="email" type="email" name="email" required autoComplete="off" className={s.input} value={emailValue} onChange={handleChange}/>
                     <label className={s.label} htmlFor="email">E-MAIL</label>
                 </div>
                 <div className={s.inputBox}>
-                    <input id="description" type="text" name="description" required="" autoComplete="off" className={s.input} value={descriptionValue} onChange={handleChange}/>
+                    <input id="description" type="text" name="description" required autoComplete="off" className={s.input} value={descriptionValue} onChange={handleChange}/>
                     <label className={s.label} htmlFor="description">PHONE</label>
                 </div>
                 <button className={s.btnForm}>SEND</button>
