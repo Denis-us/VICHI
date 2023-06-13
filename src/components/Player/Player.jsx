@@ -122,7 +122,7 @@ const Player = () => {
                     ref={playerRef}
                     width={'100%'}
                     height={'100%'}
-                    url="https://www.youtube.com/watch?v=G2nAezLoy2k"
+                    url="https://drive.google.com/file/d/1Q_G6pMglUYGq9fpWm2GfSCdlL7B6n-IR/view"
                     muted={mute}
                     playing={isPlaying}
                     onProgress={handleProgress}

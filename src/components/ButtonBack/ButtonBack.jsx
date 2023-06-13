@@ -9,9 +9,6 @@ const ButtonBack = ({btnTop, playerBtn}) => {
       navigate(-1);
     };
 
-    console.log(btnTop)
-    console.log(playerBtn)
-
     return (
         <button className={s.button} onClick={goBack}
         style={btnTop ? { top: btnTop, ...playerBtn } : playerBtn}
