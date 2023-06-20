@@ -13,7 +13,6 @@ const PlayerPage = lazy(() => import('./pages/PlayerPage'));
 const OneWorkPage = lazy(() => import('./pages/OneWorkPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage'));
 const OrderPage = lazy(() => import('./pages/OrderPage'));
-const TestPage = lazy(() => import('./pages/TestPage'));
 
 export default function App() {
 
@@ -35,7 +34,6 @@ export default function App() {
         <Route path="/works/all/player/work-info" element={<OneWorkPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/order" element={<OrderPage />} />
-        <Route path="/test" element={<TestPage />} />
       </Routes>
     
     </Suspense>

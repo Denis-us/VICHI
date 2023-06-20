@@ -10,10 +10,14 @@ export default function AllWorksPage() {
     return(
         <div className={s.allWorks}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia/>
-                <AllWorksComponent/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <AllWorksComponent/>
+                        <SocialMedia/>
+                    </div>
+                </div>       
             </Container>
         </div>
     )

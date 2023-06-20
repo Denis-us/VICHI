@@ -1,9 +1,36 @@
 .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 100vh;
-    background-image: url('../../pictures/jpg/jellyfish-white.jpg');
+    /* background-image: url('../../pictures/jpg/jellyfish-white.jpg'); */
     background-size: 100%;
-    background-position: center;
+    /* background-position: center; */
+
+    background-color: black;
+    overflow: hidden;
+}
+
+.videoHome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.centerMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

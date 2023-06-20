@@ -1,40 +1,34 @@
 .equalizerBlock {
-    position: absolute;
-    bottom: -400px;
-    left: 400px;
     font-family: 'Xolonium';
     color: var(--white);
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .equalizerHeader {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 25px;
 }
 
 .equalizerName {
-    font-size: 22px;
     margin-right: 25px;
 }
 
 .equalizer {
     display: flex;
-    /* justify-content: space-around; */
     align-items: flex-end;
-    height: 50px;
+    height: 20px;
     margin-right: 25px;
     padding-bottom: 5px;
 }
   
 .bar {
-    width: 5px; /* Ширина столбиков */
+    width: 3px;
     background-color: var(--text-color-white);
     transition: height 0.3s;
 }
 
 .bar:not(:last-child) {
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 .production {

@@ -7,7 +7,7 @@ const BtnViewAll = () => {
 
     return (
         <div className={s.btnAll}>
-            <Link to={viewAllUrl} className={s.viewAll}>View all</Link>
+            <Link to={viewAllUrl} className={s.viewAll}>view all</Link>
         </div> 
     );
 };

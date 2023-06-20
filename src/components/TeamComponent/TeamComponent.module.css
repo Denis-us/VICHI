@@ -1,63 +1,112 @@
-.owner {
+.team {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
-.ownerMain {
-    background-image: url('../../pictures/png/owner.png');
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: bottom;
+.teamList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamEl:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* .aboutEl {
+    position: relative;
+    font-family: 'FuturaPT-Light';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
 
     background-color: var(--header-bg);
-    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
-    border-radius: 50px;
-    height: 605px;
-    width: 320px;
-    margin-right: 80px;
+    border-radius: 30px;
+    height: 80px;
+    width: 240px;
     overflow: hidden;
-}
 
-.ownerList {
+    cursor: pointer
+} */
+
+/* .teamList {
     height: 605px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
-.ownerEl {
-    background-image: url('../../pictures/png/logo.png');
+.teamEl {
+    /* background-image: url('../../pictures/png/logo.png'); */
     background-size: 30%;
     background-position: center;
     background-repeat: no-repeat;
 
     background-color: var(--header-bg);
-    box-shadow: 0.3em 0.3em 4em rgba(0,0,0,0.9);
-    border-radius: 50px;
-    height: 250px;
-    width: 160px;
+    border-radius: 30px;
+    height: 80px;
+    width: 240px;
     overflow: hidden;
 }
 
-.ownerEl:nth-child(odd) {
-    margin-right: 80px;
-  }
+@media (min-width: 768px) {
+    .team {
+        width: 380px;
+    }
 
-.ownerEl:nth-child(-n+2) {
-    margin-bottom: 105px;
+    .teamList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .teamEl::before {
+        display: flex;
+
+    }
+
+    .teamEl {
+        height: 200px;
+        width: 160px;
+    }
+
+    .teamEl:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    .teamEl:nth-child(odd) {
+        margin-right: 40px;
+    }
+
+    .teamEl:nth-child(-n+2) {
+        margin-bottom: 50px;
+    }
 }
 
-.text {
-    color: var(--green);
-}
+@media (min-width: 1440px) {
+    .team {
+        width: 850px;
+    }
 
-.ownerImg {
-    width: 100%;
-}
+    .teamList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
-.ownerListImg {
-    width: 100%;
+    .teamEl {
+        height: 450px;
+        width: 180px;
+    }
+
+    .teamEl:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .teamEl:nth-child(-n+2) {
+        margin-bottom: 0px;
+    }
 }

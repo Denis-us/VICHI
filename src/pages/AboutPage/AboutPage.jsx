@@ -10,11 +10,16 @@ export default function AboutPage() {
     return(
         <div className={s.about}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia/>
-                <AboutComponents/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <AboutComponents/>
+                        <SocialMedia/>
+                    </div>
+                </div>               
             </Container>
         </div>
     )
+
 }

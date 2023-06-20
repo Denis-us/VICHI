@@ -1,18 +1,19 @@
 .aboutBlock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* height: 100vh; */
+    
 }
 
 .aboutList {
-    height: 605px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .aboutEl:not(:last-child) {
-    margin-right: 160px;
+    margin-bottom: 20px;
 }
 
 .aboutEl {
@@ -24,16 +25,16 @@
     color: var(--white);
 
     background-color: var(--header-bg);
-    border-radius: 50px;
-    height: 100%;
-    width: 160px;
+    border-radius: 30px;
+    height: 80px;
+    width: 240px;
     overflow: hidden;
 
     cursor: pointer
-
 }
 
 .aboutEl::before {
+    display: none;
     position: absolute;
     content: "";
 
@@ -53,7 +54,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 605px;
+    height: 100%;
 
     position: absolute;
     color: var(--black);
@@ -83,4 +84,64 @@
 .hiddenLink {
     font-family: 'FuturaPT-Bold';
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .aboutBlock {
+        width: 380px;
+    }
+
+    .aboutList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .aboutEl::before {
+        display: flex;
+
+    }
+
+    .aboutEl {
+        height: 200px;
+        width: 160px;
+    }
+
+    .aboutEl:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    .aboutEl:nth-child(odd) {
+        margin-right: 40px;
+    }
+
+    .aboutEl:nth-child(-n+2) {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .aboutBlock {
+        width: 850px;
+    }
+
+    .aboutList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .aboutEl {
+        height: 450px;
+        width: 180px;
+    }
+
+    .aboutEl:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .aboutEl:nth-child(-n+2) {
+        margin-bottom: 0px;
+    }
 }

@@ -10,11 +10,15 @@ export default function CompanyPage() {
     return(
         <div className={s.company}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia/>
-                <CompanyComponent/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <CompanyComponent/>
+                        <SocialMedia/>
+                    </div>
+                </div>               
             </Container>
-        </div>
+        </div> 
     )
 }

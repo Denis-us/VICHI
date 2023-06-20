@@ -10,10 +10,14 @@ const TeamPage = () => {
     return (
         <div className={s.team}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia/>
-                <TeamComponent/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <TeamComponent/>
+                        <SocialMedia/>
+                    </div>
+                </div>               
             </Container>
         </div>   
     );

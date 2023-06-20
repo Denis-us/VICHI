@@ -1,0 +1,36 @@
+.burger {
+    width: 30px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    z-index: 3;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 2px;
+    border-radius: 15px;
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+  }
+  
+  .burger.clicked .bar:nth-child(2) {
+    transform: scaleX(0);
+  }
+  
+  .burger.clicked .bar:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .burger.clicked .bar:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+@media (min-width: 768px) {
+    .burger {
+      display: none;
+    }
+}

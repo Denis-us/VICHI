@@ -3,10 +3,10 @@ import s from './Navigation.module.css';
 
 const setActive = ({isActive}) => isActive ? "link-active" : "link"
 
-const Navigation = () => {
+const Navigation = ({isClicked}) => {
 
     return (
-        <div className={s.navigation}>
+        <div className={`${s.navigation} ${isClicked ? s.transformed : ''}`}>
             <ul className={s.navigationList}>
                 <li className={s.navigationEl}>
                     <NavLink to="/about" className={setActive}>ABOUT</NavLink>

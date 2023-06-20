@@ -16,4 +16,15 @@
     position: absolute;
     top: 0;
     left: 0;
-  }
+}
+
+.centerMain {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .centerMain {
+        display: flex;
+        justify-content: space-between;
+    }
+}

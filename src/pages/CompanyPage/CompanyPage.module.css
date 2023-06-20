@@ -3,3 +3,22 @@
     background-size: 100%;
     height: 100vh;
 }
+
+.main {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.centerMain {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .centerMain {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

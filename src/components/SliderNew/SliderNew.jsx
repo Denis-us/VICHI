@@ -3,8 +3,8 @@ import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 
-import { ReactComponent as ArrowSlider } from '../../pictures/svg/btn-play-slider.svg';
-import { ReactComponent as ArrowRight } from '../../pictures/svg/prev-next.svg';
+import { ReactComponent as ArrowSlider } from '../../pictures/svg/btn-play-slider-two.svg';
+import { ReactComponent as ArrowRight } from '../../pictures/svg/arrow-slider.svg';
 // import PaginationSlider from '../PaginationSlider';
 import BtnViewAll from '../BtnViewAll';
 import './SliderNew.css';
@@ -50,27 +50,29 @@ const SliderNew = ({ onSlideChange, photos }) => {
     }
   };
 
-  const handleActiveSlideHover = (e) => {
-    const slide = e.currentTarget
-    const picture = slide.querySelector('.picture-block');
-    if (picture) {
-      const descriptionElement = picture.querySelector('.description');
-      const icoPlayElement = picture.querySelector('.icoPlay');
+  // const handleActiveSlideHover = (e) => {
+  //   if (window.innerWidth >= 768) {
+  //     const slide = e.currentTarget
+  //     const picture = slide.querySelector('.picture-block');
+  //     if (picture) {
+  //       const descriptionElement = picture.querySelector('.description');
+  //       const icoPlayElement = picture.querySelector('.icoPlay');
 
-    if(slide.classList.contains('swiper-slide-active')) {
-      if(e.type === 'mouseleave') {
-        picture.style.width = '160px';
-        descriptionElement.style.transform = 'translateY(100%)';
-        icoPlayElement.style.opacity = '0';
-      }
-      if (e.type === 'mouseenter' || e.type === 'mouseover') {
-        picture.style.width = '220px';
-        descriptionElement.style.transform = 'translateY(0%)';
-        icoPlayElement.style.opacity = '1';
-      }
-    }
-    }
-  };
+  //     if(slide.classList.contains('swiper-slide-active')) {
+  //       if(e.type === 'mouseleave') {
+  //         picture.style.width = '160px';
+  //         descriptionElement.style.transform = 'translateY(100%)';
+  //         icoPlayElement.style.opacity = '0';
+  //       }
+  //       if (e.type === 'mouseenter' || e.type === 'mouseover') {
+  //         picture.style.width = '220px';
+  //         descriptionElement.style.transform = 'translateY(0%)';
+  //         icoPlayElement.style.opacity = '1';
+  //       }
+  //     }
+  //     }
+  //   }
+  // };
 
   const slideReset = () => {
     const pictures = document.querySelectorAll('.picture-block');
@@ -89,10 +91,8 @@ const SliderNew = ({ onSlideChange, photos }) => {
   return (
     <Swiper
       modules={[Navigation, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      centeredSlides={true}
-      // loop={true}
+      slidesPerView={window.innerWidth >= 1440 ? 4 : (window.innerWidth >= 768 ? 2 : 1)}
+      centeredSlides={window.innerWidth >= 768 ? false : true}
       navigation={{
         nextEl: '.slider-button-next',
         prevEl: '.slider-button-prev',
@@ -119,17 +119,18 @@ const SliderNew = ({ onSlideChange, photos }) => {
 
       {photos.map((slide, index) => (
         <SwiperSlide key={slide._id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
-            onMouseOver={handleActiveSlideHover}
-            onMouseEnter={handleActiveSlideHover}
-            onMouseLeave={handleActiveSlideHover}>
+            style={{transform: 'none'}}
+            // onMouseOver={handleActiveSlideHover}
+            // onMouseEnter={handleActiveSlideHover}
+            // onMouseLeave={handleActiveSlideHover}
+            >
           
           <div className='picture-block'>
             <div className='picture'>
               <p className='number'>{`0${index+1}`.padStart(2, '0')}</p>
               <img src={slide.image} alt={slide.alt} className='image'/>
-              {activeSlide === index && (
-                <ArrowSlider className='icoPlay'/>
-              )}
+              <p className='title'>СЛАЙД</p>
+              <ArrowSlider className='icoPlay'/>
             </div>
             {activeSlide === index && (
             <div className='description'>

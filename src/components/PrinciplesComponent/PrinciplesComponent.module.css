@@ -2,38 +2,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .principles {
-    width: 800px;
-    height: 605px;
+    width: 240px;
     color: var(--white);
     background-color: var(--header-bg);
     box-sizing: border-box;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 50px;
+    padding: 30px;
+    border-radius: 30px;
 }
 
-.titles {
+.title {
+    font-size: 35px;
+    font-family: 'FuturaPT-Bold';
     text-align: center;
-}
-
-.firstTitle {
-    font-family: 'IntegralCF-Bold';
-    font-size: 135px;
-}
-
-.secondTitle {
-    font-family: 'FuturaPT-Light';
-    font-size: 19px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .listEl {
     position: relative;
-    margin-left: 35px;
 }
 
 .listEl::before {
@@ -45,14 +33,18 @@
     height: 5px;
     border-radius: 50%;
     background-color: var(--white);
+
+    margin-right: 35px;
+
+    display: none;
 }
 
 .listEl:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .elTitle {
-    font-family: 'FuturaPT-Medium';
+    font-family: 'FuturaPT-Bold';
     font-size: 15px;
     margin-bottom: 5px;
 }
@@ -60,4 +52,17 @@
 .elText {
     font-family: 'FuturaPT-Light';
     font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .principles {
+        width: 360px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .principles {
+        width: 840px;
+    }
+
 }

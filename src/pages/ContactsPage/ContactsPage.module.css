@@ -1,9 +1,9 @@
 .contacts {
     background-image: url('../../pictures/jpg/aboutbg.jpg');
     background-size: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
 }
 
@@ -12,4 +12,23 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 90px;
+}
+
+.main {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.centerMain {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .centerMain {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

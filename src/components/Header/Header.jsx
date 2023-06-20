@@ -1,31 +1,46 @@
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 import logo from '../../pictures/svg/logo.svg';
-import { ReactComponent as IconArrow } from '../../pictures/svg/arrow-play-nav.svg';
+import BurgerMenu from '../../components/BurgerMenu';
 import Navigation from '../Navigation';
-import Lang from '../Lang';
 
 
 const Header = () => {
+    const [isClicked, setIsClicked] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+      
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     return (
         <div className={s.header}>
-            <div className={s.logo}>
-                <NavLink to="/" className={s.logoLink}>
-                    <img src={logo} alt="logo" className={s.logoImg}/>
-                    {/* <p className={s.logoName}>VICHI</p> */}
-                </NavLink>
+            <div className={s.nav}>
+                <div className={s.logo}>
+                    <NavLink to="/" className={s.logoLink}>
+                        <img src={logo} alt="logo" className={s.logoImg}/>
+                        <p className={s.logoName}>VICHI</p>
+                    </NavLink>
+                </div>
+
+                <BurgerMenu isClicked={isClicked} handleClick={handleClick}/>
+
             </div>
 
-            <Navigation/>
-
-            <Lang/>
-            
-            <div className={s.btnPlay}>
-                <Link to="/works/all/player">
-                    <IconArrow className={s.iconArrow}/>
-                </Link>
-            </div>
+            <Navigation isClicked={!isMobile || isClicked}/>
         </div>
     );
   };

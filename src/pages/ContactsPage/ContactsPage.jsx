@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Contacts from '../../components/Contacts';
 import ButtonBack from '../../components/ButtonBack';
 import GoogleMapComponent from '../../components/GoogleMap';
+import SocialMedia from '../../components/SocialMedia';
 import s from './ContactsPage.module.css'
 
 export default function ContactsPage() {
@@ -11,14 +12,19 @@ export default function ContactsPage() {
     return(
         <div className={s.contacts}>
             <Container>
-                <ButtonBack btnTop={btnTop}/>
-
-                <div className={s.map}>
-                    <GoogleMapComponent/>
-                </div>
-                
-                <Header/>
-                <Contacts/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack btnTop={btnTop}/>
+                        <div>
+                            <div className={s.map}>
+                                <GoogleMapComponent/>
+                            </div>
+                            <Contacts/>
+                        </div>
+                        <SocialMedia/>
+                    </div>
+                </div>    
             </Container>
         </div>
     )

@@ -1,25 +1,24 @@
 .button {
-    position: absolute;
-    top: 21%;
-    width: 160px;
-    height: 78px;
-    cursor: pointer;
-    z-index: 2;
-    background-color: var(--header-bg);
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.button:hover {
-    background-color: var(--accent-color);
-}
-
-.button:hover .ico {
-    color: var(--black);
+    height: 100%;
+    display: none;
+    z-index: 1;
 }
 
 .ico {
+    margin-top: 90px;
     width: 35px;
     color: var(--white);
     transition: all 0.3s;
+    cursor: pointer;
+}
+
+.ico:hover,
+.ico:focus {
+    color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+    .button {
+        display: flex;
+    }
 }

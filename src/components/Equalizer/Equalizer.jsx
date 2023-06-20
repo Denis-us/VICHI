@@ -16,18 +16,18 @@ const Equalizer = () => {
   return (
     <div className={s.equalizerBlock}>
         <div className={s.equalizerHeader}>
-            <div className={s.equalizerName}>JellyFish</div>
+            <div className={s.equalizerName}>VICHI</div>
             <div className={s.equalizer}>
                 {barHeight.map((height, index) => (
                     <div key={index} className={s.bar} style={{ height: `${height}%` }} />
                 ))}
             </div>
-            <div className={s.equalizerText}>OCEAN</div>
+            <div className={s.equalizerText}>Kyiv</div>
         </div>
-        <div className={s.description}>
+        {/* <div className={s.description}>
             <div className={s.production}>Production - VICHI</div>
             <div className={s.director}>Director - MELNYK KOSTYA</div>
-        </div>
+        </div> */}
     </div>
     
   );

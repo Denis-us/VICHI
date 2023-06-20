@@ -22,15 +22,17 @@ export default function WorksPage() {
         setBgImg(activeSlide.image);
     };
 
-    const color = '#ececec'
-
     return(
         <div className={s.works} style={{backgroundImage: `url(${bgImg})`}}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia color={color}/>
-                <SliderNew photos={photos} onSlideChange={onSlideChange}/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <SliderNew photos={photos} onSlideChange={onSlideChange}/>
+                        <SocialMedia/>
+                    </div>
+                </div>
             </Container>
         </div>
     )

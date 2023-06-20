@@ -10,10 +10,14 @@ export default function PrinciplesPage() {
     return(
         <div className={s.principles}>
             <Container>
-                <ButtonBack/>
-                <Header/>
-                <SocialMedia/>
-                <PrinciplesComponent/>
+                <div className={s.main}>
+                    <Header/>
+                    <div className={s.centerMain}>
+                        <ButtonBack/>
+                        <PrinciplesComponent/>
+                        <SocialMedia/>
+                    </div>
+                </div>               
             </Container>
         </div>
     )
