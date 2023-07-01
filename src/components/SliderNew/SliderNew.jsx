@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
-
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/btn-play-slider-two.svg';
-import { ReactComponent as ArrowRight } from '../../pictures/svg/arrow-slider.svg';
-// import PaginationSlider from '../PaginationSlider';
+import { ReactComponent as ArrowMobile } from '../../pictures/svg/arrow-slider.svg';
+import { ReactComponent as ArrowDesktop } from '../../pictures/svg/arrow-works.svg';
 import BtnViewAll from '../BtnViewAll';
 import './SliderNew.css';
 
@@ -14,14 +13,6 @@ const SliderNew = ({ onSlideChange, photos }) => {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [swiper, setSwiper] = useState(null);
-  
-  useEffect(() => {
-    if (photos.length > 0) {
-      onSlideChange(photos[0]);
-    }
-    
-  // eslint-disable-next-line
-  }, [photos]);
 
   useEffect(() => {
     const handleKeyboardNavigation = (event) => {
@@ -50,29 +41,20 @@ const SliderNew = ({ onSlideChange, photos }) => {
     }
   };
 
-  // const handleActiveSlideHover = (e) => {
-  //   if (window.innerWidth >= 768) {
-  //     const slide = e.currentTarget
-  //     const picture = slide.querySelector('.picture-block');
-  //     if (picture) {
-  //       const descriptionElement = picture.querySelector('.description');
-  //       const icoPlayElement = picture.querySelector('.icoPlay');
+  const handleActiveSlideHover = (e) => {
+    if (window.innerWidth >= 1440) {
+      const slide = e.currentTarget;
+      const activeIndex = Array.from(slide.parentNode.children).indexOf(slide);
 
-  //     if(slide.classList.contains('swiper-slide-active')) {
-  //       if(e.type === 'mouseleave') {
-  //         picture.style.width = '160px';
-  //         descriptionElement.style.transform = 'translateY(100%)';
-  //         icoPlayElement.style.opacity = '0';
-  //       }
-  //       if (e.type === 'mouseenter' || e.type === 'mouseover') {
-  //         picture.style.width = '220px';
-  //         descriptionElement.style.transform = 'translateY(0%)';
-  //         icoPlayElement.style.opacity = '1';
-  //       }
-  //     }
-  //     }
-  //   }
-  // };
+      const timeout = setTimeout(() => {
+        onSlideChange(photos[activeIndex]);
+      }, 500);
+
+      slide.addEventListener('mouseleave', () => {
+        clearTimeout(timeout);
+      });
+    }
+  };
 
   const slideReset = () => {
     const pictures = document.querySelectorAll('.picture-block');
@@ -82,7 +64,6 @@ const SliderNew = ({ onSlideChange, photos }) => {
   }
 
   const handleSlideChangeAndReset = (swiper) => {
-    
     setSwiper(swiper);
     handleSlideChange(swiper);
     slideReset();
@@ -111,25 +92,20 @@ const SliderNew = ({ onSlideChange, photos }) => {
       onSwiper={(swiper) => handleSlideChangeAndReset(swiper)}
     >
 
-      {/* <div className="swiper-pagination">
-        {photos.map((slide, index) => (
-          <PaginationSlider slide={slide} lastSlide={photos.length-1} index={index} activeSlide={activeSlide} key={slide._id} />
-        ))}
-      </div> */}
-
       {photos.map((slide, index) => (
-        <SwiperSlide key={slide._id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
+        <SwiperSlide key={slide.id} className={`slide ${activeSlide === index ? 'swiper-slide-active' : ''}`}
             style={{transform: 'none'}}
-            // onMouseOver={handleActiveSlideHover}
-            // onMouseEnter={handleActiveSlideHover}
-            // onMouseLeave={handleActiveSlideHover}
+              onMouseOver={handleActiveSlideHover}
+              onMouseEnter={handleActiveSlideHover}
+              onMouseLeave={handleActiveSlideHover}
             >
           
           <div className='picture-block'>
             <div className='picture'>
-              <p className='number'>{`0${index+1}`.padStart(2, '0')}</p>
-              <img src={slide.image} alt={slide.alt} className='image'/>
-              <p className='title'>СЛАЙД</p>
+              {/* <p className='number'>{`0${index+1}`.padStart(2, '0')}</p> */}
+              <p className='number'>{`0${slide.id}`}</p>
+              <img src={`${process.env.PUBLIC_URL}${slide.image}`} alt={slide.alt} className='image'/>
+              <p className='title'>{slide.alt}</p>
               <ArrowSlider className='icoPlay'/>
             </div>
             {activeSlide === index && (
@@ -148,20 +124,20 @@ const SliderNew = ({ onSlideChange, photos }) => {
               </div>
             </div>
             )}
-            
           </div>
-
         </SwiperSlide>
       ))}
       
       <div className='slider-controler'>
-        <div className='swiper-button-prev' onClick={() => swiper && swiper.slidePrev()}>
-          <ArrowRight className='button-prev-slide'/>
-        </div>
-        <div className='swiper-button-next' onClick={() => swiper && swiper.slideNext()}>
-          <ArrowRight className='button-next-slide'/>
-        </div>
+      <div className='swiper-button-prev' onClick={() => swiper && swiper.slidePrev()}>
+        {window.innerWidth > 767 ? <ArrowDesktop className='button-prev-slide' />
+        : <ArrowMobile className='button-prev-slide' />}
       </div>
+      <div className='swiper-button-next' onClick={() => swiper && swiper.slideNext()}>
+        {window.innerWidth > 767 ? <ArrowDesktop className='button-next-slide' />
+        : <ArrowMobile className='button-next-slide' />}
+      </div>
+    </div>
 
     <BtnViewAll/>
     

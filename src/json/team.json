@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "img": "pictures/team/konstanz.png",
+        "alt": "owner"
+    },
+    {
+        "id": 2,
+        "img": "pictures/team/sergiy.png",
+        "alt": "operator"
+    },
+    {
+        "id": 3,
+        "img": "pictures/team/sergiy.png",
+        "alt": "operator2"
+    },
+    {
+        "id": 4,
+        "img": "pictures/team/konstanz.png",
+        "alt": "owner2"
+    }
+]

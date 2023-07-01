@@ -1,0 +1,29 @@
+.filterWork {
+    display: none;
+    width: 60px;
+    height: 25px;
+    border: 1px solid rgba(70, 70, 70, 0.25);
+    background-color: rgba(70, 70, 70, 0.25);
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25), -4px -4px 10px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.filterText {
+    color: var(--white);
+    font-family: 'FuturaPT-Light';
+    font-size: 10px;
+}
+
+@media (min-width: 768px) {
+    .filterWork {
+        display: block;
+    }
+}
+
+@media (min-width: 1440px) {
+    .filterWork {
+        width: 180px;
+    }
+}

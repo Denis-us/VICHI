@@ -1,28 +1,17 @@
+import React from 'react';
+import team from '../../json/team.json';
 import s from './TeamComponent.module.css';
 
-const TeamComponent = () => {
 
+const TeamComponent = () => {
     return (
         <div className={s.team}>
             <ul className={s.teamList}>
-                <li className={s.teamEl}>
-                    {/* <p className={s.text}>00 OWNER</p> */}
-                    {/* <img src={owner} className={s.ownerImg} alt="owner" /> */}
+                {team.map((person) => (
+                <li className={s.teamEl} key={person.id}>
+                    <img src={`${process.env.PUBLIC_URL}/${person.img}`} className={s.ownerImg} alt={person.alt} />
                 </li>
-                <li className={s.teamEl}>
-                    {/* <p className={s.text}>01 PRINCIPLES</p> */}
-                    {/* <img src={logo} className={s.ownerListImg} alt="logo" /> */}
-                    
-                </li>
-                <li className={s.teamEl}>
-                    {/* <p className={s.text}>02 PRINCIPLES</p> */}
-                    {/* <img src={logo} className={s.ownerListImg} alt="logo" /> */}
-                    
-                </li>
-                <li className={s.teamEl}>
-                    {/* <p className={s.text}>03 TEAM</p> */}
-                    {/* <img src={logo} className={s.ownerListImg} alt="logo" /> */}
-                </li>
+                ))}
             </ul>
         </div>   
     );

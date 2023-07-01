@@ -1,19 +1,26 @@
 .home {
-    position: relative;
     height: 100vh;
-    /* background-image: url('../../pictures/jpg/jellyfish-white.jpg'); */
-    background-size: 100%;
-    /* background-position: center; */
+    background-position: center;
+    background-size: cover;
+}
 
-    background-color: black;
-    overflow: hidden;
+.home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(38, 38, 38, 0.25);
 }
 
 .videoHome {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    height: 100%;
 }
 
 .main {
@@ -24,6 +31,7 @@
 }
 
 .centerMain {
+    height: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;

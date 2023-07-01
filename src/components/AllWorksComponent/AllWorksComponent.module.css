@@ -3,101 +3,117 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* height: 100vh; */
 }
 
 .worksEl {
-    overflow: hidden;
-}
-
-.work {
-    position: relative;
-    width: 800px;
-    height: 160px;
-    border-radius: 50px;
-    margin-bottom: 30px;
-    color: var(--white);
-    background-color: rgb(179, 177, 88);
-    
+    width: 240px;
+    height: 80px;
     display: flex;
     align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.work:hover .workHidden,
-.work:focus .workHidden {
-    transform: translateX(0%);
+.worksEl:hover .workBefore,
+.worksEl:focus .workBefore {
+    width: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.worksEl:hover .workTitle,
+.worksEl:focus .workTitle,
+.worksEl:hover .number,
+.worksEl:focus .number {
+    opacity: 0;
+}
+
+.worksEl:hover .link,
+.worksEl:focus .link {
+    opacity: 1;
+}
+
+.workBefore {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s;
+    border-radius: 30px;
+    padding: 0px 30px 0px 30px;
+    box-sizing: border-box;
+
+    background-position: center;
+    
+    color: var(--white);
+    z-index: 1;
+}
+
+.link {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.link:hover .play,
+.link:focus .play {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
 }
 
 .workTitle {
     font-family: 'FuturaPT-Light';
-    font-size: 40px;
-    margin-left: 95px;
+    font-size: 25px;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
 
 .number {
-    position: absolute;
-    font-family: 'FuturaPT-Bold';
-    font-size: 80px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-family: 'HeadingPro-Bold';
+    font-size: 50px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    padding-top: 8px;
 }
 
 .workHidden {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    color: var(--white);
-    padding-top: 30px;
-    padding-left: 30px;
-    box-sizing: border-box;
-    transform: translateX(100%);
-    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    opacity: 1;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
-.workDescription {
-    margin-bottom: 30px;
-}
-
-.workDescriptionStr {
+    left: 0;
     display: flex;
-    align-items: center;
-}
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: inherit;
+    height: inherit;
+    color: var(--white);
+    padding: 10px 40px 10px 120px;
+    border-radius: 30px;
 
-.workDescriptionStr:not(:last-child) {
-    margin-bottom: 5px;
-}
 
-.workName {
-    font-family: "FuturaPT-Light";
-    font-size: 15px;
-}
+    box-sizing: border-box;
 
-.workValue {
-    position: relative;
-    font-family: "FuturaPT-Bold";
-    font-size: 15px;
-    margin-left: 16px;
-}
-
-.workValue::before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    content: '';
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    background-color: var(--white);
-    left: -8px;
+    border: 1px solid rgba(70, 70, 70, 0.25);
+    background: rgba(70, 70, 70, 0.25);
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25), -4px -4px 10px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
 }
 
 .workDuration {
@@ -105,11 +121,104 @@
     font-size: 15px;
 }
 
+.title {
+    display: none;
+}
+
 .numberHidden {
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 12px;
+    top: 12px;
 
-    font-family: "FuturaPT-Bold";
-    font-size: 18px;
+    font-family: "HeadingPro-Bold";
+    font-size: 15px;
+}
+
+.paginationBlock {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .worksEl {
+        width: 365px;
+        height: 140px;
+    }
+
+    .worksEl:hover .workBefore,
+    .worksEl:focus .workBefore {
+        width: 150px;
+    }
+
+    .workBefore {
+        padding: 0px 60px 0px 60px;
+    }
+
+    .workTitle {
+        font-size: 30px;
+    }
+
+    .number {
+        font-size: 80px;
+    }
+
+    .link {
+        left: 10px;
+    }
+
+    .play {
+        width: 80px;
+        height: 80px;
+    }
+
+    .workHidden {
+        padding: 10px 40px 10px 170px;
+    }
+
+    .title {
+        font-size: 25px;
+        font-family: 'FuturaPT-Bold';
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .numberHidden {
+        right: 15px;
+        top: 15px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .worksEl {
+        width: 840px;
+        height: 140px;
+    }
+
+    .worksEl:hover .workBefore,
+    .worksEl:focus .workBefore {
+        width: 400px;
+    }
+
+    .workBefore {
+        padding: 0px 180px 0px 180px;
+    }
+
+    .workTitle {
+        font-size: 40px;
+    }
+
+    .link {
+        left: 125px;
+    }
+
+    .workHidden {
+        padding: 10px 40px 10px 440px;
+    }
+
+    .paginationBlock {
+        width: 840px;
+    }
 }

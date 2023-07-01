@@ -1,10 +1,6 @@
 .order {
-    background-image: url('../../pictures/jpg/aboutbg.jpg');
-    background-size: 100%;
     height: 100vh;
-
-    padding: 40px;
-    box-sizing: border-box;
+    background-color: #14262E;
 }
 
 .main {

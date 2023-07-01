@@ -1,0 +1,68 @@
+.searchWork {
+    position: relative;
+    display: none;
+    width: 60px;
+    height: 25px;
+    border: 1px solid rgba(70, 70, 70, 0.25);
+    background-color: rgba(70, 70, 70, 0.25);
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25), -4px -4px 10px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.searchWork:hover .searchIcon,
+.searchWork:focus .searchIcon {
+    left: 15px;
+}
+
+.searchWork:hover .searchInput,
+.searchWork:focus .searchInput,
+.searchWork:hover .searchBtn,
+.searchWork:focus .searchBtn {
+    opacity: 1;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    color: var(--white);
+    transition: left 0.3s ease;
+}
+
+.searchInput {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 50%;
+
+    /* padding: 5px 0; */
+    color: var(--text-color-white);
+    border: none;
+    border-bottom: 2px solid var(--white);
+    outline: none;
+    background: transparent;
+}
+
+.searchBtn {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .searchWork {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1440px) {
+    .searchWork {
+        width: 180px;
+    }
+}

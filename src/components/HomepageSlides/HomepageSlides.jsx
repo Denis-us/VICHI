@@ -1,14 +1,13 @@
-// import React, { useState, useEffect } from 'react';
 import s from './HomepageSlides.module.css';
 
 
-const HomepageSlides = () => {
+const HomepageSlides = ({id}) => {
 
     return (
         <div className={s.slides}>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
+            <p className={`${s.numberSlide} ${id === 0 ? s.active : ''}`}>1</p>
+            <p className={`${s.numberSlide} ${id === 1 ? s.active : ''}`}>2</p>
+            <p className={`${s.numberSlide} ${id === 2 ? s.active : ''}`}>3</p>
         </div>
     );
   };

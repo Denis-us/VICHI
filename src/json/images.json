@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "image": "pictures/slides/slide1.jpg",
+        "src": "videos/C1.mp4",
+        "alt": "Steps",
+        "time": "01:34:12"
+    }, {
+        "id": 2,
+        "image": "pictures/slides/slide2.jpg",
+        "src": "videos/C2.mp4",
+        "alt": "Tetiiv ferma",
+        "time": "00:10:56"
+    }, {
+        "id": 3,
+        "image": "pictures/slides/slide3.jpg",
+        "src": "videos/C3.mp4",
+        "alt": "Sport",
+        "time": "03:00:05"
+    }, {
+        "id": 4,
+        "image": "pictures/slides/slide2.jpg",
+        "src": "videos/C2.mp4",
+        "alt": "Restaurant",
+        "time": "00:14:02"
+    }, {
+        "id": 5,
+        "image": "pictures/slides/slide1.jpg",
+        "src": "videos/C1.mp4",
+        "alt": "Serg",
+        "time": "02:21:18"
+    }, {
+        "id": 6,
+        "image": "pictures/slides/slide3.jpg",
+        "src": "videos/C3.mp4",
+        "alt": "Training",
+        "time": "00:31:43"
+    }, {
+        "id": 7,
+        "image": "pictures/slides/slide1.jpg",
+        "src": "videos/C1.mp4",
+        "alt": "Up",
+        "time": "01:12:10"
+    }
+]

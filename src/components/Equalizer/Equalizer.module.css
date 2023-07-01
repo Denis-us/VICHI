@@ -1,5 +1,5 @@
 .equalizerBlock {
-    font-family: 'Xolonium';
+    font-family: 'FuturaPT-Medium';
     color: var(--white);
     font-size: 10px;
 }
@@ -22,6 +22,7 @@
 }
   
 .bar {
+    border-radius: 30px;
     width: 3px;
     background-color: var(--text-color-white);
     transition: height 0.3s;

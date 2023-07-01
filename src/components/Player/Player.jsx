@@ -22,6 +22,7 @@ const Player = () => {
   const [mute, setMute] = useState(false);
 
   const location = useLocation();
+  const video = location.state;
   const viewMoreInfoUrl = `${location.pathname}/work-info`;
 
   useEffect(() => {
@@ -117,25 +118,24 @@ const Player = () => {
 
     return (
         <>
-            <div className={s.playerWrapper} >
-                <ReactPlayer
-                    ref={playerRef}
-                    width={'100%'}
-                    height={'100%'}
-                    url="https://drive.google.com/file/d/1Q_G6pMglUYGq9fpWm2GfSCdlL7B6n-IR/view"
-                    muted={mute}
-                    playing={isPlaying}
-                    onProgress={handleProgress}
-                    onDuration={handleDuration}
-                    volume={mute ? 0 : 0.5}
-                />
-            </div>
+            <ReactPlayer
+              ref={playerRef}
+              width={'100%'}
+              height={'100%'}
+              url={`${process.env.PUBLIC_URL}/${video.src}`}
+              muted={mute}
+              playing={isPlaying}
+              onProgress={handleProgress}
+              onDuration={handleDuration}
+              volume={mute ? 0 : 0.5}
+              className={s.playerWrapper}
+            />
         
             <div className={`${s.controlsWrapper} ${isMouseActive && s.mouseActive}`} ref={controlsRef} onClick={handlePlayPause}>
                 
               <div className={s.topControls}>
                   <ButtonBack playerBtn={btnBackStyle}/>
-                  <h5 className={s.playerTitle}>Diablo IV</h5>
+                  <h5 className={s.playerTitle}>{video.alt}</h5>
               </div>
 
               <div className={s.middleControls}>

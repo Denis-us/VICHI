@@ -1,11 +1,19 @@
 .principles {
-    position: relative;
-    background-image: url('../../pictures/jpg/aboutbg.jpg');
-    background-size: 100%;
+    /* position: relative; */
+    background-image: url('../../pictures/jpg/bg-for-pronciples.jpg');
+    background-position: center;
+    background-size: cover;
     height: 100vh;
+}
 
-    padding: 40px;
-    box-sizing: border-box;
+.principles::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(14, 37, 48, 0.80);
 }
 
 .main {

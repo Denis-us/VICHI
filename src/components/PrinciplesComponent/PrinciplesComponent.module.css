@@ -7,10 +7,14 @@
 .principles {
     width: 240px;
     color: var(--white);
-    background-color: var(--header-bg);
     box-sizing: border-box;
     padding: 30px;
+
     border-radius: 30px;
+    border: 1px solid rgba(70, 70, 70, 0.25);
+    background-color: rgba(70, 70, 70, 0.25);
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25), -4px -4px 10px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
 }
 
 .title {
@@ -57,12 +61,14 @@
 @media (min-width: 768px) {
     .principles {
         width: 360px;
+        height: 450px;
     }
 }
 
 @media (min-width: 1440px) {
     .principles {
         width: 840px;
+        height: 450px;
     }
 
 }

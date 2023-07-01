@@ -1,7 +1,5 @@
 .player {
-    background-image: url('../../pictures/png/milky-way.png');
-    background-size: 100%;
-    background-position: center;
+    /* background-position: center; */
     display: flex;
     justify-content: center;
     align-items: center;

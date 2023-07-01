@@ -7,6 +7,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TeamPage = lazy(() => import('./pages/TeamPage'));
 const PrinciplesPage = lazy(() => import('./pages/PrinciplesPage'));
 const CompanyPage = lazy(() => import('./pages/CompanyPage'));
+const ClientsPage = lazy(() => import('./pages/ClientsPage'));
 const WorksPage = lazy(() => import('./pages/WorksPage'));
 const AllWorksPage = lazy(() => import('./pages/AllWorksPage'));
 const PlayerPage = lazy(() => import('./pages/PlayerPage'));
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/about/team" element={<TeamPage/>} />
         <Route path="/about/principles" element={<PrinciplesPage/>} />
         <Route path="/about/company" element={<CompanyPage/>} />
+        <Route path="/about/clients" element={<ClientsPage/>} />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/works/all" element={<AllWorksPage />} />
         <Route path="/works/all/player" element={<PlayerPage />} />
