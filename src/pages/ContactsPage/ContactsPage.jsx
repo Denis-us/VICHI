@@ -18,7 +18,7 @@ export default function ContactsPage() {
                         <ButtonBack btnTop={btnTop}/>
                         <div>
                             <div className={s.map}>
-                                <GoogleMapComponent/>
+                                <GoogleMapComponent className={s.googleMap}/>
                             </div>
                             <Contacts/>
                         </div>

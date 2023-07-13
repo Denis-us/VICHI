@@ -1,20 +1,23 @@
 // key = AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c
 
-import React from 'react';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+import React, {useState} from 'react';
+import { GoogleMap, MarkerF, useLoadScript, DirectionsService, DirectionsRenderer  } from '@react-google-maps/api';
 
-const containerStyle = {
-    // position: 'absolute',
 
-    width: '800px',
-    height: '475px',
-    borderRadius: '50px'
-};
+export default function GoogleMapComponent() {
 
-const center = {
-  lat: 50.46467025011272,
-  lng: 30.625634225751806
-};
+  const {isLoaded} = useLoadScript ({
+    googleMapsApiKey: "AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c"
+  })
+
+  if(!isLoaded) return <div>
+    Loading...
+  </div>
+
+  return (
+      <Map />
+  );
+}
 
 const mapOptions = {
     styles: [
@@ -40,25 +43,49 @@ const mapOptions = {
     ]
   };
 
+const containerStyle = {
+
+  width: '800px',
+  height: '475px',
+  borderRadius: '30px'
+};
+
+const center = {
+  lat: 50.46467025011272,
+  lng: 30.625634225751806
+};
+
 function Map() {
+  const [directions, setDirections] = useState(null);
+
+  const onDirectionsLoad = (result) => {
+    setDirections(result);
+  };
+
   return (
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={16}
+      zoom={14}
       options={mapOptions}
     >
-      <Marker position={center} />
+      <DirectionsService
+        options={{
+          destination: center,
+          origin: navigator.geolocation.getCurrentPosition(),
+          travelMode: 'DRIVING',
+        }}
+        callback={onDirectionsLoad}
+      />
+      {directions && (
+        <DirectionsRenderer
+          directions={directions}
+          options={{
+            suppressMarkers: true,
+          }}
+        />
+      )}
+      <MarkerF position={center} />
     </GoogleMap>
   );
-}
-
-export default function GoogleMapComponent() {
-  return (
-    
-   
-    <LoadScript googleMapsApiKey="AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c">
-      <Map />
-    </LoadScript>
-  );
-}
+  }

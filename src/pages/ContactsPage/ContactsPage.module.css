@@ -11,6 +11,10 @@
     margin-bottom: 90px;
 }
 
+/* .googleMap {
+    top: 50%;
+} */
+
 .main {
     height: inherit;
     display: flex;
