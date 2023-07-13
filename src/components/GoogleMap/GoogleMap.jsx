@@ -1,6 +1,6 @@
 // key = AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c
 
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import { GoogleMap, MarkerF, useLoadScript, DirectionsService, DirectionsRenderer  } from '@react-google-maps/api';
 
 
@@ -57,6 +57,23 @@ const center = {
 
 function Map() {
   const [directions, setDirections] = useState(null);
+  const [origin, setOrigin] = useState(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const { latitude, longitude } = position.coords;
+          setOrigin({ lat: latitude, lng: longitude });
+        },
+        error => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }, []);
 
   const onDirectionsLoad = (result) => {
     setDirections(result);
@@ -72,7 +89,7 @@ function Map() {
       <DirectionsService
         options={{
           destination: center,
-          origin: navigator.geolocation.getCurrentPosition(),
+          origin,
           travelMode: 'DRIVING',
         }}
         callback={onDirectionsLoad}
