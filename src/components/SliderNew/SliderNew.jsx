@@ -72,7 +72,7 @@ const SliderNew = ({ onSlideChange, photos }) => {
   return (
     <Swiper
       modules={[Navigation, Scrollbar, A11y]}
-      slidesPerView={window.innerWidth >= 1440 ? 4 : (window.innerWidth >= 768 ? 2 : 1)}
+      slidesPerView={window.innerWidth >= 1440 ? 3 : (window.innerWidth >= 768 ? 2 : 1)}
       centeredSlides={window.innerWidth >= 768 ? false : true}
       navigation={{
         nextEl: '.slider-button-next',
@@ -129,15 +129,15 @@ const SliderNew = ({ onSlideChange, photos }) => {
       ))}
       
       <div className='slider-controler'>
-      <div className='swiper-button-prev' onClick={() => swiper && swiper.slidePrev()}>
-        {window.innerWidth > 767 ? <ArrowDesktop className='button-prev-slide' />
-        : <ArrowMobile className='button-prev-slide' />}
+        <div className='swiper-button-prev' onClick={() => swiper && swiper.slidePrev()}>
+          {window.innerWidth > 767 ? <ArrowDesktop className='button-prev-slide' />
+          : <ArrowMobile className='button-prev-slide' />}
+        </div>
+        <div className='swiper-button-next' onClick={() => swiper && swiper.slideNext()}>
+          {window.innerWidth > 767 ? <ArrowDesktop className='button-next-slide' />
+          : <ArrowMobile className='button-next-slide' />}
+        </div>
       </div>
-      <div className='swiper-button-next' onClick={() => swiper && swiper.slideNext()}>
-        {window.innerWidth > 767 ? <ArrowDesktop className='button-next-slide' />
-        : <ArrowMobile className='button-next-slide' />}
-      </div>
-    </div>
 
     {/* <BtnViewAll/> */}
     

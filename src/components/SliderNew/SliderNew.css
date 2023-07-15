@@ -1,7 +1,7 @@
 .swiper-wrapper {
     display: flex;
     align-items: center;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 
 .swiper-slide {
@@ -111,6 +111,7 @@
 .slider-controler {
     display: flex;
     justify-content: space-between;
+    /* margin-top: 65px; */
 }
 
 .swiper-button-prev,
@@ -122,6 +123,9 @@
 }
 
 .button-prev-slide {
+    position: absolute;
+    top: 30px;
+
     rotate: 180deg;
     height: inherit;
     width: inherit;
@@ -129,6 +133,9 @@
 }
 
 .button-next-slide {
+    position: absolute;
+    top: 30px;
+
     width: inherit;
     height: inherit;
     color: var(--accent-color);
@@ -139,6 +146,10 @@
 }
 
 @media (min-width: 768px) {
+    /* .swiper-wrapper {
+        padding-top: 100px;
+    } */
+
     .picture-block {
         min-width: 160px;
         height: 450px;
@@ -164,6 +175,15 @@
 
         transform: translateY(-70%);
     }
+
+    .button-prev-slide,
+    .button-next-slide {
+        color: var(--accent-color);
+    }
+
+    /* .slider-controler {
+        margin-top: 150px;
+    } */
 }
 
 @media (min-width: 1440px) {
@@ -173,13 +193,14 @@
     }
 
     .swiper-wrapper {
-        height: 500px;
+        height: 50vh;
+        padding-top: 0px;
     }
 
     .swiper-slide:hover .picture-block,
     .swiper-slide:focus .picture-block {
         min-width: 200px;
-        height: 500px;
+        height: 50vh;
     }
 
     .swiper-slide:hover .icoPlay,
@@ -189,11 +210,11 @@
 
     .picture-block {
         min-width: 180px;
-        height: 450px;
+        height: 45vh;
     }
 
     .swiper-slide-active .picture-block {
-        height: 450px;
+        height: 45vh;
     }
 
     .swiper-slide-active .icoPlay {
@@ -204,5 +225,24 @@
     .swiper-button-next  {
         width: 30px;
         height: 70px;
+    }
+
+    .image {
+        height: 50vh;
+    }
+
+    .button-prev-slide,
+    .button-next-slide {
+        opacity: 0.5;
+        color: var(--accent-color);
+
+        transition: all 0.3s;
+    }
+
+    .button-prev-slide:hover,
+    .button-prev-slide:focus,
+    .button-next-slide:hover,
+    .button-next-slide:focus {
+        opacity: 1;
     }
 }
