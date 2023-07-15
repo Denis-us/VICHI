@@ -2,14 +2,14 @@
     {
         "id": 1,
         "image": "pictures/slides/slide1.jpg",
-        "src": "videos/C1.mp4"
+        "src": "videos/C1.webm"
     }, {
         "id": 2,
         "image": "pictures/slides/slide2.jpg",
-        "src": "videos/C2.mp4"
+        "src": "videos/C2.webm"
     }, {
         "id": 3,
         "image": "pictures/slides/slide3.jpg",
-        "src": "videos/C3.mp4"
+        "src": "videos/C3.webm"
     }
 ]

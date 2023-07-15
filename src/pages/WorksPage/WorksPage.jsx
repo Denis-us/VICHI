@@ -25,7 +25,7 @@ export default function WorksPage() {
     return (
         <div className={s.works} style={{backgroundImage: `url(${process.env.PUBLIC_URL}${bgImg.image})`}}>
             {window.innerWidth >= 1440 && (
-                <video id='video-player' src={`${process.env.PUBLIC_URL}${bgImg.src}`} type="video/mp4" autoPlay loop muted className={s.video}></video>
+                <video id='video-player' src={`${process.env.PUBLIC_URL}${bgImg.src}`} type="video/webm" autoPlay loop muted className={s.video}></video>
             )}
             <Container>
                 <div className={s.main}>

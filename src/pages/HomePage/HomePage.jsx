@@ -38,7 +38,7 @@ export default function HomePage() {
     return(
         <div className={s.home} style={{ backgroundImage: window.innerWidth < 1440 ? `url(${backgroundImage})` : undefined }}>
               {window.innerWidth >= 1440 && (
-                <video id='video-player' src={`${process.env.PUBLIC_URL}${currentVideo.src}`} type="video/mp4" autoPlay loop muted className={s.videoHome}></video>
+                <video id='video-player' src={`${process.env.PUBLIC_URL}${currentVideo.src}`} type="video/webm" autoPlay loop muted className={s.videoHome}></video>
               )}
               <Container>
                 <div className={s.main}>
