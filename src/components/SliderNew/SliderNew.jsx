@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.min.css';
 import { ReactComponent as ArrowSlider } from '../../pictures/svg/btn-play-slider-two.svg';
 import { ReactComponent as ArrowMobile } from '../../pictures/svg/arrow-slider.svg';
 import { ReactComponent as ArrowDesktop } from '../../pictures/svg/arrow-works.svg';
-import BtnViewAll from '../BtnViewAll';
+// import BtnViewAll from '../BtnViewAll';
 import './SliderNew.css';
 
 
@@ -139,7 +139,7 @@ const SliderNew = ({ onSlideChange, photos }) => {
       </div>
     </div>
 
-    <BtnViewAll/>
+    {/* <BtnViewAll/> */}
     
     </Swiper>
   );
