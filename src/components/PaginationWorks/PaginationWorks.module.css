@@ -26,11 +26,13 @@
 @media (min-width: 768px) {
     .worksPagination {
         width: 200px;
+        margin-right: 30px;
     }
 }
 
 @media (min-width: 1440px) {
     .worksPagination {
         width: 260px;
+        margin-right: 125px;
     }
 }

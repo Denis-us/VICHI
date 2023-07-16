@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
@@ -10,6 +11,8 @@ import './SliderNew.css';
 
 
 const SliderNew = ({ onSlideChange, photos }) => {
+  const location = useLocation();
+  const viewAllUrl = `${location.pathname}/all`;
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [swiper, setSwiper] = useState(null);
@@ -106,7 +109,10 @@ const SliderNew = ({ onSlideChange, photos }) => {
               <p className='number'>{`0${slide.id}`}</p>
               <img src={`${process.env.PUBLIC_URL}${slide.image}`} alt={slide.alt} className='image'/>
               <p className='title'>{slide.alt}</p>
-              <ArrowSlider className='icoPlay'/>
+              <Link to={viewAllUrl}>
+                <ArrowSlider className='icoPlay'/>
+              </Link>
+              
             </div>
             {activeSlide === index && (
             <div className='description'>

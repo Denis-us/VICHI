@@ -1,7 +1,8 @@
+import React from 'react';
 import s from './Contacts.module.css';
 import { ReactComponent as Tel } from '../../pictures/svg/phone.svg';
 
-const Contacts = () => {
+const Contacts = ({ onContactBtnClick }) => {
 
     return (
         <div className={s.blockContacts}>
@@ -15,12 +16,9 @@ const Contacts = () => {
                     </button>
                 </li>
                 <li className={s.contactsEl}>
-                    <button className={s.contactBtn}>KYIV, SOLOVIANENKA ST.</button>
+                    <button className={s.contactBtn} onClick={onContactBtnClick}>KYIV, SOLOVIANENKA ST.</button>
                 </li>
             </ul>
-            
-            
-            
         </div>   
     );
 };

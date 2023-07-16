@@ -2,21 +2,29 @@
     {
         "id": 1,
         "img": "pictures/team/konstanz.png",
-        "alt": "owner"
+        "alt": "MELNYK KOSTYA",
+        "position": "owner",
+        "experience": "8 year experience"
     },
     {
         "id": 2,
         "img": "pictures/team/sergiy.png",
-        "alt": "operator"
+        "alt": "SERGIY",
+        "position": "operator",
+        "experience": "6 year experience"
     },
     {
         "id": 3,
         "img": "pictures/team/sergiy.png",
-        "alt": "operator2"
+        "alt": "SERGIY 2",
+        "position": "operator",
+        "experience": "6 year experience"
     },
     {
         "id": 4,
         "img": "pictures/team/konstanz.png",
-        "alt": "owner2"
+        "alt": "MELNYK KOSTYA2",
+        "position": "owner",
+        "experience": "8 year experience"
     }
 ]

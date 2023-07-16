@@ -1,21 +1,30 @@
 // key = AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c
 
-import React, {useState, useEffect } from 'react';
-import { GoogleMap, MarkerF, useLoadScript, DirectionsService, DirectionsRenderer  } from '@react-google-maps/api';
+import React, {useState, useEffect} from 'react';
+import { GoogleMap, MarkerF, useLoadScript  } from '@react-google-maps/api';
+import marker from '../../pictures/svg/marker.svg';
 
 
-export default function GoogleMapComponent() {
+export default function GoogleMapComponent({ isMapCentered }) {
+
+  const [mapCenter, setMapCenter] = useState(center);
 
   const {isLoaded} = useLoadScript ({
     googleMapsApiKey: "AIzaSyCD908jHkpJVYVuTdDJgZezHlrSuCBGw7c"
   })
+
+  useEffect(() => {
+    if (isMapCentered) {
+      setMapCenter(center);
+    }
+  }, [isMapCentered]);
 
   if(!isLoaded) return <div>
     Loading...
   </div>
 
   return (
-      <Map />
+      <Map center={mapCenter} mapCenter={mapCenter}/>
   );
 }
 
@@ -55,54 +64,16 @@ const center = {
   lng: 30.625634225751806
 };
 
-function Map() {
-  const [directions, setDirections] = useState(null);
-  const [origin, setOrigin] = useState(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          const { latitude, longitude } = position.coords;
-          setOrigin({ lat: latitude, lng: longitude });
-        },
-        error => {
-          console.error('Error getting user location:', error);
-        }
-      );
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
-  }, []);
-
-  const onDirectionsLoad = (result) => {
-    setDirections(result);
-  };
+function Map({ mapCenter }) {
 
   return (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={center}
+      center={mapCenter !== center ? mapCenter : center}
       zoom={14}
       options={mapOptions}
     >
-      <DirectionsService
-        options={{
-          destination: center,
-          origin,
-          travelMode: 'DRIVING',
-        }}
-        callback={onDirectionsLoad}
-      />
-      {directions && (
-        <DirectionsRenderer
-          directions={directions}
-          options={{
-            suppressMarkers: true,
-          }}
-        />
-      )}
-      <MarkerF position={center} />
+      <MarkerF position={center} icon={marker}/>
     </GoogleMap>
   );
-  }
+}

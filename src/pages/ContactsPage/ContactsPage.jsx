@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import Container from '../../components/Container';
 import Header from '../../components/Header';
 import Contacts from '../../components/Contacts';
@@ -7,20 +8,24 @@ import SocialMedia from '../../components/SocialMedia';
 import s from './ContactsPage.module.css'
 
 export default function ContactsPage() {
-    const btnTop = '0'
-    
+    const [isMapCentered, setIsMapCentered] = useState(false);
+
+    const handleContactBtnClick = () => {
+        setIsMapCentered(true);
+    };
+
     return(
         <div className={s.contacts}>
             <Container>
                 <div className={s.main}>
                     <Header/>
                     <div className={s.centerMain}>
-                        <ButtonBack btnTop={btnTop}/>
+                        <ButtonBack/>
                         <div>
                             <div className={s.map}>
-                                <GoogleMapComponent className={s.googleMap}/>
+                                <GoogleMapComponent className={s.googleMap} isMapCentered={isMapCentered}/>
                             </div>
-                            <Contacts/>
+                            <Contacts onContactBtnClick={handleContactBtnClick}/>
                         </div>
                         <SocialMedia/>
                     </div>

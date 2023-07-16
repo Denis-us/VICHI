@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PaginationWorks from '../PaginationWorks';
 import SearchWork from '../SearchWork';
-import WorkFilter from '../WorkFilter';
+// import WorkFilter from '../WorkFilter';
 import { ReactComponent as Play } from '../../pictures/svg/btn-play-slider-two.svg';
 import s from './AllWorksComponent.module.css';
 
@@ -51,7 +51,7 @@ const AllWorksComponent = ({images}) => {
                 ))}
             </ul>
             <div className={s.paginationBlock}>
-                <WorkFilter/>
+                {/* <WorkFilter/> */}
                 <PaginationWorks
                     totalPages={Math.ceil(images.length / itemsPerPage)}
                     currentPage={currentPage}
