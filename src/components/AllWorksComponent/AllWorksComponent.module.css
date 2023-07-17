@@ -138,7 +138,7 @@
     width: 360px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -188,6 +188,10 @@
         right: 15px;
         top: 15px;
         font-size: 20px;
+    }
+
+    .paginationBlock {
+        justify-content: flex-end;
     }
 }
 

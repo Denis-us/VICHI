@@ -9,7 +9,10 @@ const SearchWork = () => {
     <form className={s.searchWork}>
         <Search className={s.searchIcon}/>
         <input className={s.searchInput} value=''/>
-        <button type="submit" className={s.searchBtn}>Search</button>
+        <div className={s.searchBtn}>
+          <button type="submit" className={s.btn}>search</button>
+        </div>
+        
     </form>
   );
 };
